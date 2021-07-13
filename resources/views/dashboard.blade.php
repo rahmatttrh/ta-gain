@@ -169,7 +169,7 @@
                 new mapboxgl.Popup()
                     .setLngLat(coordinates)
                     .setHTML(
-                        'Teknisi<hr><span class="font-bold text-lg">' + nama +'</span><br>'+no+'<hr>Lat: '+lat+'<br>Long: '+long
+                        "Teknisi<hr><span class='font-bold text-lg'>" + nama +"</span><br>"+no+"<hr>Lat: "+lat+"<br>Long: "+long
                     )
                     .addTo(map2);
             });
@@ -181,7 +181,7 @@
                 map2.getCanvas().style.cursor = '';
             });
         });
-        console.log({!! $geoJsonTeknisi !!})
+        // console.log({!! $geoJsonTeknisi !!})
 
         // loadLocation({!! $geoJsonTeknisi !!})
         map2.setStyle('mapbox://styles/mapbox/outdoors-v11')
