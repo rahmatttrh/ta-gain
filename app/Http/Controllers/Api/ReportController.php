@@ -5,7 +5,7 @@ namespace App\Http\Controllers\Api;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\{Teknisi, Order, JobPhoto, jobActivity};
-
+use Illuminate\Support\Facades\{Hash, Storage};
 use App\Http\Resources\{OrderResource, OrdersResource};
 
 class ReportController extends Controller
@@ -51,7 +51,7 @@ class ReportController extends Controller
             'teknisi_id' => $request->teknisi_id,
             'judul_foto' => $request->judul_foto,
             'deskripsi_foto' => $request->deskripsi_foto,
-            'foto_pekerjaan' => $request->file('foto_pekerjaan')?$request->file('foto_pekerjaan')->store('storage/images/foto-pekerjaan/' . $orderName): '',
+            'foto_pekerjaan' => $request->file('foto_pekerjaan')?$request->file('foto_pekerjaan')->store('images/foto-pekerjaan/' . $orderName): '',
             'status' => '1'
         ]);
 
@@ -63,6 +63,10 @@ class ReportController extends Controller
     }
 
     public function update(Request $request, JobPhoto $job){
+
+        $order = Order::where('id',  $job->order_id)->get()->first();
+        // dd($order);
+        $orderName = $order->site;
 
         if ($request->file('foto_pekerjaan')) {
             Storage::delete($job->foto_pekerjaan);
