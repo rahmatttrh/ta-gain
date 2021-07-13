@@ -7,7 +7,7 @@
   <x-alert></x-alert>
 
   <!-- Table -->
-  <div class="w-full mb-5  overflow-hidden rounded shadow-xs">
+  <div class="w-full   overflow-hidden rounded shadow-xs">
     <div id="main" class="w-full overflow-x-auto">
       <table class="w-full whitespace-no-wrap ">
         <thead>
@@ -17,7 +17,7 @@
             <th class="px-4 py-3">Site</th>
             <th class="px-2 py-3">Status</th>
             <th class="px-4 py-3">Kordinator</th>
-            <th class="px-4 py-3">Harga</th>
+            {{-- <th class="px-4 py-3">Harga</th> --}}
           </tr>
         </thead>
         <tbody class="bg-white divide-y dark:divide-gray-700 dark:bg-gray-800">
@@ -74,11 +74,11 @@
             </td>
 
 
-            <td class="px-4 py-3 text-sm">
+            {{-- <td class="px-4 py-3 text-sm">
               <p>Paket : {{formatRupiah($order->harga_paket)}}</p>
               <p>Reimburse : {{formatRupiah($order->total_reimburse)}}</p>
               <p><b>Grand Total : {{formatRupiah($order->grand_total)}}</b></p>
-            </td>
+            </td> --}}
           </tr>
           @endif
           @endforeach
@@ -92,7 +92,7 @@
     <div class="flex mt-2">
       {{ $orders->links() }}
     </div>
-    <hr class="mb-2 mt-10">
+    <hr class="mb-2 ">
     <x-info>> Fitur ini digunakan untuk melihat semua order.</x-info>
 
   </div>

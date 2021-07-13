@@ -14,7 +14,7 @@
             <th class="px-4 py-3"></th>
             <th class="px-4 py-3">Site</th>
             <th class="px-4 py-3">Kordinator</th>
-            <th class="px-4 py-3">Harga</th>
+            {{-- <th class="px-4 py-3">Harga</th> --}}
           </tr>
         </thead>
         <tbody class="bg-white divide-y dark:divide-gray-700 dark:bg-gray-800">
@@ -45,12 +45,12 @@
                 @endif
               </p>
             </td>
-            <td class="px-4 py-3 text-sm">
+            {{-- <td class="px-4 py-3 text-sm">
               <p>Paket : {{formatRupiah($order->harga_paket)}}</p>
               <p>Reimburse : {{formatRupiah($order->total_reimburse)}}</p>
               <p><b>Grand Total : {{formatRupiah($order->grand_total)}}</b></p>
               
-            </td>
+            </td> --}}
 
 
           </tr>
