@@ -69,11 +69,11 @@
  <div class="flex w-full mt-6">
   <div class="w-1/2 mr-4">
     <p class="block uppercase tracking-wide dark:text-gray-300 text-gray-700 text-xs font-bold mb-2">Foto KTP</p>
-    <img class="rounded-md" src="{{asset('storage/' .$teknisi->foto_ktp)}}" alt="">
+    <img class="rounded-md" src="{{asset('storage/app/' .$teknisi->foto_ktp)}}" alt="">
    </div>
    <div class="w-1/2">
     <p class="block uppercase tracking-wide dark:text-gray-300 text-gray-700 text-xs font-bold mb-2">Foto Diri</p>
-    <img class="rounded-md" src="{{asset('storage/' .$teknisi->foto_diri)}}" alt="">
+    <img class="rounded-md" src="{{asset('storage/app/' .$teknisi->foto_diri)}}" alt="">
    </div>
  </div>
 </div>
