@@ -15,32 +15,28 @@
             <table class="w-full whitespace-no-wrap">
                 <thead>
                     <tr class="text-xs font-semibold tracking-wide text-left text-gray-500 uppercase border-b dark:border-gray-700 bg-gray-50 dark:text-gray-400 dark:bg-gray-800">
-                        <th class="px-4 py-3">Judul </th>
-                        <th class="px-4 py-3">Deskripsi </th>
+                        <th class="px-4 py-3">No</th>
                         <th class="px-4 py-3">Foto</th>
+                        <th class="px-4 py-3">Judul</th>
                         <th class="px-4 py-3">Aksi</th>
                     </tr>
                 </thead>
                 <tbody class="bg-white divide-y dark:divide-gray-700 dark:bg-gray-800">
                     <?php $kondisi = 1; ?>
-                    @foreach ($jobphotos as $job)
+                    @foreach ($jobphotos as $key => $job)
                     <tr class="text-gray-700 dark:text-gray-400 ">
-                        <td class="px-4 py-3 text-sm">
-                            <p class="font-semibold">{{$job->judul_foto}}</p>
+                        <td class="px-4 py-3">
+                            {{ ($jobphotos->currentpage()-1) * $jobphotos->perpage() + $key + 1 }}
                         </td>
                         <td class="px-4 py-3 text-sm">
-                            <p class="font-semibold">{{$job->deskripsi_foto}}</p>
+                            <a href="{{ route('report.foto', $job) }}"><img  width="75px" style="cursor: pointer;" class="rounded" src="{{asset('storage/app/' .$job->foto_pekerjaan)}}" alt=""></a>
                         </td>
                         <td class="px-4 py-3 text-sm">
-                            {{-- <button
-                                @click="openModal"
-                                class="px-4 py-2 text-sm font-medium leading-5 text-white transition-colors duration-150 bg-purple-600 border border-transparent rounded-lg active:bg-purple-600 hover:bg-purple-700 focus:outline-none focus:shadow-outline-purple"
-                              >
-                                Open Modal
-                              </button> --}}
-                            <a href="{{ route('report.foto', $job) }}"><img  width="75px" style="cursor: pointer;" class="rounded" src="{{asset('storage/' .$job->foto_pekerjaan)}}" alt=""></a>
-                           
+                            <p class="font-medium">{{$job->judul_foto}}</p>
+                            <p class="">{{$job->deskripsi_foto}}</p>
                         </td>
+                        
+                        
                         
                         <td class="px-4 py-3 text-xs">
                             <?php
@@ -48,11 +44,11 @@
                                 $kondisi = $kondisi * 0;
                             ?>
                                 <a href='#setuju' rel="modal:open">
-                                    <button class="modalApprove mr-2 px-4 py-2  font-medium leading-5 text-white transition-all duration-300 bg-gradient-to-b from-blue-400 to-blue-500 hover:from-blue-300 hover:to-blue-500 rounded active:bg-teal-600 hover:bg-teal-800 focus:outline-none focus:shadow-outline-teal" data-id="{{$job->id}}">Approve</button>
+                                    <button class="modalApprove mr-2 px-4 py-1  leading-5 text-white transition-all duration-300 bg-green-500 hover:bg-green-700 rounded-full focus:outline-none focus:shadow-outline-teal" data-id="{{$job->id}}">Approve</button>
                                 </a>
 
                                 <a href='#tolak' rel="modal:open">
-                                    <button class="modalReject mr-2 px-4 py-2  font-medium leading-5 text-white transition-all duration-300 bg-gradient-to-b from-red-400 to-red-500 hover:from-red-300 hover:to-red-500 rounded active:bg-teal-600 hover:bg-teal-800 focus:outline-none focus:shadow-outline-teal" data-id="{{$job->id}}">Reject</button>
+                                    <button class="modalReject mr-2 px-4 py-1   leading-5 text-white transition-all duration-300 bg-red-500 hover:bg-red-700 rounded-full active:bg-teal-600 hover:bg-teal-800 focus:outline-none focus:shadow-outline-teal" data-id="{{$job->id}}">Reject</button>
                                 </a>
                             <?php } else if ($job->status == '2') {
                                 $kondisi = $kondisi * 1;
