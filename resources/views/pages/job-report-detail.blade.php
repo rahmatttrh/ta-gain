@@ -93,7 +93,7 @@
                             <p class="font-semibold">{{$job->deskripsi_foto}}</p>
                         </td>
                         <td class="px-4 py-3 text-sm">
-                            <a href="{{ route('report.foto', $job) }}"><img  width="75px" style="cursor: pointer;" class="rounded" src="{{asset('storage/' .$job->foto_pekerjaan)}}" alt=""></a>
+                            <a href="{{ route('report.foto', $job) }}"><img  width="75px" style="cursor: pointer;" class="rounded" src="{{asset('storage/app/' .$job->foto_pekerjaan)}}" alt=""></a>
                             {{-- <img width="75px" class="rounded" src="{{asset('storage/' .$job->foto_pekerjaan)}}" alt=""> --}}
                         </td>
 

@@ -6,7 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\{Teknisi, Order, JobPhoto, jobActivity};
 use Illuminate\Support\Facades\{Hash, Storage};
-use App\Http\Resources\{OrderResource, OrdersResource};
+use App\Http\Resources\{OrderResource, OrdersResource,  JobReportResource};
 
 class ReportController extends Controller
 {
@@ -28,7 +28,8 @@ class ReportController extends Controller
         }
         return response()->json([
             'order' => new OrderResource($order) ,
-            'jobReport' => $jobReport,
+            'jobReport' => JobReportResource::collection($jobReport),
+            // 'jobReport' => $jobReport,
             'revisiReport' => $revisi
         ]);
     }
