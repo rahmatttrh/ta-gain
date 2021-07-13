@@ -51,7 +51,7 @@
   @if (request()->is('job-draft'))
   <span class="absolute inset-y-0 left-0 w-2 bg-blue-500 rounded-tr-lg rounded-br-lg" aria-hidden="true"></span>
   @endif
-  <a class="{{request()->is('job-draft') ? 'text-white dark:text-blue-500' : 'text-gray-300 dark:text-gray-400'}} inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-blue-400 dark:hover:text-gray-200" href="{{route('job.draft')}}">
+  <a class="{{request()->is('job-draft')  ? 'text-white dark:text-blue-500' : 'text-gray-300 dark:text-gray-400'}} inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-blue-400 dark:hover:text-gray-200" href="{{route('job.draft')}}">
     <svg class="w-7 h-7 p-1 text-white bg-gradient-to-b from-blue-300 to-blue-500 rounded-full" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
       <path d="M8 2a1 1 0 000 2h2a1 1 0 100-2H8z"></path>
       <path d="M3 5a2 2 0 012-2 3 3 0 003 3h2a3 3 0 003-3 2 2 0 012 2v6h-4.586l1.293-1.293a1 1 0 00-1.414-1.414l-3 3a1 1 0 000 1.414l3 3a1 1 0 001.414-1.414L10.414 13H15v3a2 2 0 01-2 2H5a2 2 0 01-2-2V5zM15 11h2a1 1 0 110 2h-2v-2z"></path>

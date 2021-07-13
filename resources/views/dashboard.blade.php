@@ -169,7 +169,7 @@
                 new mapboxgl.Popup()
                     .setLngLat(coordinates)
                     .setHTML(
-                        'Teknisi<hr>' + nama +'<br>'+no+'<hr>Lat: '+lat+'<br>Long: '+long
+                        'Teknisi<hr><span class="font-bold text-lg">' + nama +'</span><br>'+no+'<hr>Lat: '+lat+'<br>Long: '+long
                     )
                     .addTo(map2);
             });

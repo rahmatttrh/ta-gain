@@ -123,7 +123,7 @@
       @endif
       <!--  -->
       @endif --}}
-
+      <hr>
       @if ($order->status == '6' || $order->status == '7' || $order->status == '8' || $order->status == '9')
       <div class="flex items-center justify-between p-4 mb-2 mt-4 text-sm font-semibold text-gray-50 bg-green-400 rounded  ">
         <div class="flex items-center">
@@ -148,6 +148,7 @@
         </div>
       </div>
       @else
+
       <div class="flex items-center justify-between p-4 mb-2 mt-4 text-sm font-semibold text-gray-50 bg-blue-400 rounded  ">
         <div class="flex items-center">
           <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20">
@@ -193,16 +194,16 @@
         @if ($order->status == 202)
         <form action="{{route('continue.job', $order)}}" method="post" id="continue" class="mr-1">
           @csrf
-          <button type="sumbit" class="w-full jobcontinue px-5 mb-2  py-3 text-sm font-medium leading-5 text-white transition-colors duration-150 bg-green-600 border border-transparent rounded sm:w-auto sm:px-4 sm:py-2 active:bg-green-600 hover:bg-green-700 focus:outline-none focus:shadow-outline-teal">Continue Order</button>
+          <button type="sumbit" class="w-full jobcontinue px-3 mb-2  py-1 text-sm font-medium leading-5 text-white transition-colors duration-150 bg-green-600 border border-transparent rounded-lg sm:w-auto sm:px-4 sm:py-2 active:bg-green-600 hover:bg-green-700 focus:outline-none focus:shadow-outline-teal">Continue Order</button>
         </form>
         @else
         <form action="{{route('finish.job', $order)}}" method="post" id="finish" class="mr-1">
           @csrf
-          <button type="sumbit" class="w-full jobfinish px-5 mb-2  py-3 text-sm font-medium leading-5 text-white transition-colors duration-150 bg-green-600 border border-transparent rounded sm:w-auto sm:px-4 sm:py-2 active:bg-green-600 hover:bg-green-700 focus:outline-none focus:shadow-outline-teal">Finish Order</button>
+          <button type="sumbit" class="w-full jobfinish px-3 mb-2  py-1 text-xs  leading-5 text-white transition-colors duration-150 bg-green-600 border border-transparent rounded-2xl  active:bg-green-600 hover:bg-green-700 focus:outline-none focus:shadow-outline-teal">Finish Order</button>
         </form>
-        <a href='#pending' rel="modal:open">
-          <button class="w-full modalReject px-5 mb-2  py-3 text-sm font-medium leading-5 text-white transition-colors duration-150 bg-gray-600 border border-transparent rounded sm:w-auto sm:px-4 sm:py-2 active:bg-gray-600 hover:bg-gray-700 focus:outline-none focus:shadow-outline-teal" data-id="{{$order->id}}">Pending Order</button>
-        </a>
+        {{-- <a href='#pending' rel="modal:open">
+          <button class="w-full modalReject px-3 mb-2  py-1 text-xs  leading-5 text-white transition-colors duration-150 bg-gray-600 border border-transparent rounded-2xl sm:w-auto sm:px-4 sm:py-2 active:bg-gray-600 hover:bg-gray-700 focus:outline-none focus:shadow-outline-teal" data-id="{{$order->id}}">Pending Order</button>
+        </a> --}}
         @endif
 
       </div>
@@ -227,16 +228,16 @@
             <tbody class="bg-white divide-y dark:divide-gray-700 dark:bg-gray-800">
               @foreach ($activities as $key => $act)
               <tr class="text-gray-700 dark:text-gray-400">
-                <td class="px-4 py-3 text-sm">
+                <td class="px-4 py-3  text-sm">
                   {{ ($activities->currentpage()-1) * $activities->perpage() + $key + 1 }}
                 </td>
                 <td class="px-4 py-3 text-sm">
-                  <p class="font-semibold">{{$act->kegiatan}}</p>
+                  <p class="">{{$act->kegiatan}}</p>
                 </td>
-                <td class="px-4 py-3 text-md">
+                <td class="px-4 py-3 text-sm">
                   <p class="">{{$act->jam}}</p>
                 </td>
-                <td class="px-4 py-3 text-md">
+                <td class="px-4 py-3 text-sm">
                   <p class="">{{$act->tanggal}}</p>
                 </td>
               </tr>
