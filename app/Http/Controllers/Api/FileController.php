@@ -25,7 +25,7 @@ class FileController extends Controller
             if (public_path('file/' . $fileName)) {
                 File::delete('file/' . $fileName);
                 if ($zip->open(public_path('file/' . $fileName), ZipArchive::CREATE) === TRUE) {
-                    $files = File::files(public_path('storage/images/foto-pekerjaan/' . $fileName));
+                    $files = File::files(public_path('storage/app/images/foto-pekerjaan/' . $fileName));
 
                     foreach ($files as $key => $value) {
                         $relativeName = basename($value);
