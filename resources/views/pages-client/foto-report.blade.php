@@ -11,7 +11,8 @@
  
 
 <div class="w-full overflow-hidden rounded-lg shadow-xs mb-5">
-  <img src="{{asset('storage/app/' .$jobphoto->foto_pekerjaan)}}" alt="">
+  {{-- <img src="{{asset('storage/app/' .$jobphoto->foto_pekerjaan)}}" alt=""> --}}
+  <img src="{{asset('storage/' .$jobphoto->foto_pekerjaan)}}" alt="">
 </div>
 
 </x-app-layout>

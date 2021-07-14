@@ -37,7 +37,7 @@ class ReportController extends Controller
     public function reportRevisi(JobPhoto $job){
         $foto = JobPhoto::where('id', $job->id)->get()->first();
         return response()->json([
-            'foto' => $foto
+            'foto' => new JobReportResource($foto)
         ]);
     }
 

@@ -18,7 +18,7 @@ class JobReportResource extends JsonResource
         $order = Order::where('id', $this->order_id)->get()->first();
         $client = Pelanggan::where('id', $this->pelanggan_id)->get()->first();
         $teknisi = Teknisi::where('id', $this->teknisi_id)->get()->first();
-
+        // dd($teknisi);
         if($this->status == "1"){
             $status = "Waiting for client validation";
         } else if($this->status == "2"){
