@@ -1,6 +1,6 @@
 <?php
 
-use App\Http\Controllers\Api\{LoginController, UserController, OrderController, ReportController};
+use App\Http\Controllers\Api\{LoginController, UserController, OrderController, ReportController, FileController};
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -39,3 +39,5 @@ Route::get('/report/detail/{order:id}', [ReportController::class, 'reportDetail'
 Route::get('/report-rev/{job:id}', [ReportController::class, 'reportRevisi']);
 Route::post('/report-update/{job:id}', [ReportController::class, 'update']);
 Route::post('/upload', [ReportController::class, 'upload']);
+
+Route::get('/download-order/{order:id}', [FileController::class, 'getZip']);
