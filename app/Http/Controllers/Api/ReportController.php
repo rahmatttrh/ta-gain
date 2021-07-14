@@ -14,7 +14,7 @@ class ReportController extends Controller
         $orders = $teknisi->orders->where('status', 6);
         return response()->json([
             'message' => 'success',
-            'orders' => OrdersResource::collection($orders)
+            'orders' => OrderResource::collection($orders)
         ]);
     }
 
