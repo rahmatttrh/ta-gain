@@ -22,7 +22,7 @@
           class="text-xs font-semibold tracking-wide text-left text-gray-500 uppercase border-b dark:border-gray-700 bg-gray-50 dark:text-gray-400 dark:bg-gray-800"
         >
         <th class="px-4 py-3">No</th>
-        <th class="px-4 py-3">Action</th>
+        <th class="px-4 py-3">Aksi</th>
         <th class="px-4 py-3">Status</th>
         <th class="px-4 py-3">Site</th>
         <th class="px-4 py-3">Client</th>
@@ -38,7 +38,7 @@
           {{ ($orders->currentpage()-1) * $orders->perpage() + $key + 1 }}
         </td>
         <td class="px-4 py-3 text-xs flex">
-          <a href="{{route('job.detail.kordinator', $order)}}" class=" bg-teal-600 font-semibold  text-gray-100 py-1 px-4 pr-8 rounded-full leading-tight hover:bg-blue-400">Update</a>
+          <a href="{{route('job.detail.kordinator', $order)}}" class=" bg-teal-600  text-gray-100 py-1 px-4 pr-8 rounded-full leading-tight hover:bg-blue-400">Update</a>
         </td>
         <td class="px-4 py-3">
 
@@ -56,7 +56,7 @@
           </p>
         </td>
         <td class="px-4 py-3">
-          <p class="text-sm font-semibold ">
+          <p class="text-sm ">
             {{$order->pelanggan->nama}}
           </p>
         </td>

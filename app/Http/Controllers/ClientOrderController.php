@@ -130,7 +130,7 @@ class ClientOrderController extends Controller
             'status' => '8',
         ]);
 
-        return redirect('/client-complete')->with('success', 'Job Order berhasil di Approve!');
+        return redirect('/client-ready')->with('success', 'Job Order berhasil di Approve!');
     }
 
     public function profile()

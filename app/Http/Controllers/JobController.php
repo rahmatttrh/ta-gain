@@ -220,7 +220,7 @@ class JobController extends Controller
             'status' => '9',
         ]);
 
-        return redirect()->back();
+        return redirect()->to('job-complete')->with('berhasil', 'Konfirmasi pembayaran berhasil.');;
     }
 
     // Menampilkan halaman job complete 

@@ -59,7 +59,7 @@
                                 {{ ($orders->currentpage()-1) * $orders->perpage() + $key + 1 }}
                             </td>
                             <td class="px-4 py-3">
-                                <p class="text-sm font-semibold">
+                                <p class="text-sm ">
                                     {{$order->pelanggan->nama}}
                                 </p>
                             </td>
@@ -67,7 +67,7 @@
                                 {{$order->site}}
                             </td>
                             <td class="px-4 py-3">
-                                <p class="text-sm font-semibold">
+                                <p class="text-sm ">
                                     {{$order->kabupaten}},{{$order->provinsi}}
                                 </p>
                                 <p class="text-xs text-gray-600 dark:text-gray-400">

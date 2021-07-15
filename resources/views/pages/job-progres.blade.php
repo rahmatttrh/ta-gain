@@ -30,7 +30,7 @@
             </td>
             <td class="px-4 py-3 text-xs flex items-center">
               <a href="{{route('job.edit', $order)}}" class=" mr-2 bg-green-400  text-gray-100 py-1 px-4 rounded-full  leading-tight hover:bg-green-500">Edit</a>
-              <a href="{{route('job.detail.admin', $order)}}" class=" bg-teal-600 font-semibold  text-gray-100 py-1 px-4 pr-8 rounded-full leading-tight hover:bg-blue-400">Detail</a>
+              <a href="{{route('job.detail.admin', $order)}}" class=" bg-teal-600   text-gray-100 py-1 px-4 pr-8 rounded-full leading-tight hover:bg-blue-400">Detail</a>
             </td>
             <td class="px-4 py-3">
               @if ($order->status == 3)

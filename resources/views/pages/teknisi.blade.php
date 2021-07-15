@@ -44,7 +44,7 @@
           @foreach ($teknisis as $tek)
           <tr class="text-gray-700 dark:text-gray-400">
             <td class="px-4 py-3 ">
-                  <p class="font-semibold">{{$tek->nama}}</p>
+                  <p class="">{{$tek->nama}}</p>
                   <p class="text-xs text-gray-600 dark:text-gray-400">
                     {{$tek->no_hp}}
                   </p>
@@ -57,7 +57,7 @@
               <img width="75px" class="rounded" src="{{asset('storage/' .$tek->foto_diri)}}" alt="">  
             </td>
                 <td class="px-4 py-3 text-sm">
-                <p class="font-semibold">{{$tek->area}}</p>
+                <p class="">{{$tek->area}}</p>
                       {{-- <p class="text-xs text-gray-600 dark:text-gray-400">
                         087646464
                       </p> --}}
@@ -69,9 +69,9 @@
                       </p>
                 </td>
                 <td class="px-2 py-3 text-xs flex flex-col">
-                  <a href="{{route('teknisi.edit', $tek)}}" class="w-full mb-1 hover:bg-gray-600 text-center py-1 px-4 font-medium leading-tight text-gray-100 bg-gray-500 rounded-full dark:bg-gray-700 dark:text-gray-100">EDIT</a>
+                  <a href="{{route('teknisi.edit', $tek)}}" class="w-full mb-1 hover:bg-gray-600 text-center py-1 px-4  leading-tight text-gray-100 bg-gray-500 rounded-full dark:bg-gray-700 dark:text-gray-100">EDIT</a>
                   <form id="data-{{ $tek->id }}" action="{{route('teknisi.delete', $tek->id)}}"></form>
-                  <button onclick="deleteRow( {{ $tek->id }} )" class="w-full mb-1 hover:bg-red-600 text-center py-1 px-4 font-medium leading-tight text-gray-100 bg-red-400 rounded-full dark:bg-red-700 dark:text-gray-100">HAPUS</button>
+                  <button onclick="deleteRow( {{ $tek->id }} )" class="w-full mb-1 hover:bg-red-600 text-center py-1 px-4  leading-tight text-gray-100 bg-red-400 rounded-full dark:bg-red-700 dark:text-gray-100">HAPUS</button>
                     
                 </td>
           </tr>

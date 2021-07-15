@@ -30,11 +30,11 @@
               {{ ($orders->currentpage()-1) * $orders->perpage() + $key + 1 }}
             </td>
             <td class="px-4 py-3 text-xs flex ">
-              <a href="{{route('job.detail.client', $order)}}" class=" bg-teal-600 font-semibold  text-gray-100 py-1 px-4 pr-8 mr-2 rounded-full leading-tight hover:bg-blue-400">Detail</a>
+              <a href="{{route('job.detail.client', $order)}}" class=" bg-teal-600   text-gray-100 py-1 px-4 pr-8 mr-2 rounded-full leading-tight hover:bg-blue-400">Detail</a>
               @if ($order->status<='4') <form action="{{route('job.cancel.client') }}" method="post" id="cancel">
                 @csrf
                 <input type="hidden" name="id" id="orderId">
-                <button type="sumbit" data-id="{{$order->id}}" class="cancel mr-1 bg-red-500 text-center text-gray-100 py-1 px-4 pr-8 rounded-full font-semibold  hover:bg-red-600">Cancel</button>
+                <button type="sumbit" data-id="{{$order->id}}" class="cancel mr-1 bg-red-500 text-center text-gray-100 py-1 px-4 pr-8 rounded-full   hover:bg-red-600">Cancel</button>
                 </form>
                 @endif
             </td>

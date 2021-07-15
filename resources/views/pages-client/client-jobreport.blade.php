@@ -24,8 +24,8 @@
                         </td>
 
                         <td class="px-2 py-3 text-xs">
-                            <a href="{{route('client.jobreport.detail', $order)}}" class=" bg-green-500 font-semibold  text-gray-100 py-1 px-4 pr-8 rounded-full leading-tight hover:bg-green-600">Report</a>
-                            <a href="{{route('job.detail.client', $order)}}" class=" bg-teal-600 font-semibold  text-gray-100 py-1 px-4 pr-8 rounded-full leading-tight hover:bg-blue-400">Detail</a>
+                            <a href="{{route('client.jobreport.detail', $order)}}" class=" bg-green-500   text-gray-100 py-1 px-4 pr-8 rounded-full leading-tight hover:bg-green-600">Report</a>
+                            <a href="{{route('job.detail.client', $order)}}" class=" bg-teal-600   text-gray-100 py-1 px-4 pr-8 rounded-full leading-tight hover:bg-blue-400">Detail</a>
                         </td>
                         <td class="px-4 py-3 text-sm">
                             {{$order->site}}

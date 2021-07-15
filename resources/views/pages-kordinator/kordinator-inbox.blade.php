@@ -24,7 +24,7 @@
                             {{ ($joborders->currentpage()-1) * $joborders->perpage() + $key + 1 }}
                         </td>
                         <td class="px-4 py-3">
-                            <p class="text-sm font-semibold">
+                            <p class="text-sm ">
                                 {{$joborder->nama}}
                             </p>
                         </td>

@@ -99,7 +99,7 @@
                         <td></td>
                         @elseif($job->status == '201' && auth()->user()->isTeknisi())
                         <td class="px-4 py-3 text-xs">
-                            <a href='{{route('revisi.report', $job)}}' class=" bg-red-600 font-semibold  text-gray-100 py-1 px-4 pr-8 rounded leading-tight hover:bg-red-400">
+                            <a href='{{route('revisi.report', $job)}}' class=" bg-red-600  text-gray-100 py-1 px-4 pr-8 rounded leading-tight hover:bg-red-400">
                                 Revisi
                             </a>
                         </td>

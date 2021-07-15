@@ -24,7 +24,7 @@
               {{ ($joborders->currentpage()-1) * $joborders->perpage() + $key + 1 }}
             </td>
             <td class="px-4 py-3">
-              <p class="text-sm font-semibold">
+              <p class="text-sm ">
                 {{$pelanggan->nama}}
               </p>
             </td>
@@ -35,7 +35,7 @@
               
             </td>
             <td class="px-2 py-3 text-xs ">
-              <a href="{{route('job.draft.detail', $pelanggan->id)}}" class=" bg-teal-600 font-semibold  text-gray-100 py-1 px-4 pr-8 rounded-full leading-tight hover:bg-blue-400">
+              <a href="{{route('job.draft.detail', $pelanggan->id)}}" class=" bg-teal-600   text-gray-100 py-1 px-4 pr-8 rounded-full leading-tight hover:bg-blue-400">
                 Detail</a>
                 
             </td>

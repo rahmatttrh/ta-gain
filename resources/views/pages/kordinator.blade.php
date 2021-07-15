@@ -44,7 +44,7 @@
           @foreach ($kordinators as $kordi)
           <tr class="text-gray-700 dark:text-gray-400 ">
             <td class="px-4 py-3">
-              <p class="font-semibold">{{$kordi->nama}}</p>
+              <p class="">{{$kordi->nama}}</p>
               <p class="text-xs text-gray-600 dark:text-gray-400">
                 {{$kordi->no_hp}}
               </p>
@@ -54,7 +54,7 @@
               <img width="75px" class="rounded" src="{{asset('storage/' .$kordi->foto_diri)}}" alt="">
             </td>
             <td class="px-4 py-3 text-sm">
-              <p class="font-semibold">{{$kordi->area}}</p>
+              <p class="">{{$kordi->area}}</p>
             </td>
             <td class="px-4 py-3 text-sm">
               <p class="text-xs text-gray-600 dark:text-gray-400">
@@ -65,9 +65,9 @@
               {{-- <span class="px-2 py-1 w-full mb-2 text-center font-semibold leading-tight text-white bg-green-400 rounded-full dark:bg-green-700 dark:text-green-100">
                 ON
               </span> --}}
-              <a href="{{route('kordinator.edit', $kordi)}}" class=" mb-2 hover:bg-gray-600 text-center py-1 font-semibold leading-tight text-gray-100 bg-gray-500 rounded-full dark:bg-gray-700 dark:text-gray-100">EDIT</a>
+              <a href="{{route('kordinator.edit', $kordi)}}" class=" mb-1 hover:bg-gray-600 text-center py-1  leading-tight text-gray-100 bg-gray-500 rounded-full dark:bg-gray-700 dark:text-gray-100">EDIT</a>
               <form id="data-{{ $kordi->id }}" action="{{route('kordinator.delete', $kordi->id)}}"></form>
-                  <button onclick="deleteRow( {{ $kordi->id }} )" class="w-full mb-1 hover:bg-red-600 text-center py-1 px-4 font-medium leading-tight text-gray-100 bg-red-400 rounded-full dark:bg-red-700 dark:text-gray-100">HAPUS</button>
+                  <button onclick="deleteRow( {{ $kordi->id }} )" class="w-full mb-1 hover:bg-red-600 text-center py-1 px-4 leading-tight text-gray-100 bg-red-400 rounded-full dark:bg-red-700 dark:text-gray-100">HAPUS</button>
             </td>
             
             

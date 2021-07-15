@@ -28,15 +28,15 @@
          {{ ($orders->currentpage()-1) * $orders->perpage() + $key + 1 }}
        </td>
        <td class="px-1 py-3 text-xs">
-          @if ($order->bast)
+          {{-- @if ($order->bast)
             <a href="{{route('job.bast', $order)}}" class="bg-green-500 font-semibold  text-gray-100 py-1 px-4 pr-8 rounded-full leading-tight hover:bg-green-600">Master BAST Uploaded</a>
-          @endif
+          @endif --}}
           {{-- @if ($order->bast)
           <a href="{{route('job.bast', $order)}}" class="bg-green-500 font-semibold  text-gray-100 py-1 px-4 pr-8 rounded-full leading-tight hover:bg-green-600">Master BAST Uploaded</a>
           @else
           <a href="{{route('job.bast', $order)}}" class=" bg-teal-600 font-semibold  text-gray-100 py-1 px-4 pr-8 rounded-full leading-tight hover:bg-teal-700">Upload BAST</a>
          @endif --}}
-          <a href="{{route('bast', $order)}}" class=" bg-green-500   text-gray-100 py-1 px-4 pr-8 rounded-full leading-tight hover:bg-green-600">Upload BAST</a>
+          {{-- <a href="{{route('bast', $order)}}" class=" bg-green-500   text-gray-100 py-1 px-4 pr-8 rounded-full leading-tight hover:bg-green-600">Upload BAST</a> --}}
           <a href="{{route('download.bast', $order)}}" class=" bg-green-500   text-gray-100 py-1 px-4 pr-8 rounded-full leading-tight hover:bg-green-600">Download BAST</a>
           <a href="{{route('job.detail.admin', $order)}}" class=" bg-teal-600   text-gray-100 py-1 px-4 pr-8 rounded-full leading-tight hover:bg-blue-400">Detail</a>
          

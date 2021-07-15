@@ -28,14 +28,14 @@
               <form action="{{ route('approve.bast', $order) }}" method="post" id="approve">
                 @csrf
                 <input type="hidden" name="id" id="id">
-                <button type="sumbit" data-id="{{$order->id}}" class="approve mr-1 bg-blue-400 text-center text-gray-100 py-1 px-4 pr-8 rounded-full font-semibold  hover:bg-blue-500">Approve</button>
+                <button type="sumbit" data-id="{{$order->id}}" class="approve mr-1 bg-blue-400 text-center text-gray-100 py-1 px-4 pr-8 rounded-full   hover:bg-blue-500">Approve BAST</button>
               </form>
-              <a href="{{route('download.bast', $order)}}" class="mr-1 bg-green-500 font-semibold  text-gray-100 py-1 px-4 pr-8 rounded-full leading-tight hover:bg-green-600">Download BAST</a>
+              <a href="{{route('download.bast', $order)}}" class="mr-1 bg-green-500   text-gray-100 py-1 px-4 pr-8 rounded-full leading-tight hover:bg-green-600">Download BAST</a>
               @else
-              {{-- <span href="" class="mr-1 bg-red-500 font-semibold  text-gray-100 py-1 px-4 pr-8 rounded-full leading-tight hover:bg-red-600">Bast belum di upload</span> --}}
+              {{-- <span href="" class="mr-1 bg-red-500   text-gray-100 py-1 px-4 pr-8 rounded-full leading-tight hover:bg-red-600">Bast belum di upload</span> --}}
               @endif
 
-              <a href="{{route('job.detail.client', $order)}}" class="bg-teal-600 font-semibold  text-gray-100 py-1 px-4 pr-8 rounded-full leading-tight hover:bg-blue-400">Detail</a>
+              <a href="{{route('job.detail.client', $order)}}" class="bg-teal-600   text-gray-100 py-1 px-4 pr-8 rounded-full leading-tight hover:bg-blue-400">Detail</a>
             </td>
             <td class="px-4 py-3 text-sm">
               @if ($order->bast)
