@@ -11,6 +11,7 @@
           <tr class="text-xs font-semibold tracking-wide text-left bg-gray-200 dark:bg-gray-900  text-gray-500 dark:text-gray-400 uppercase border-b dark:border-gray-700  ">
             <th class="px-4 py-3">No</th>
             <th class="px-4 py-3">Action</th>
+            <th class="px-4 py-3">Status</th>
             <th class="px-4 py-3">Site</th>
             <th class="px-4 py-3">Kordinator</th>
             {{-- <th class="px-4 py-3">Harga</th> --}}
@@ -31,10 +32,17 @@
               </form>
               <a href="{{route('download.bast', $order)}}" class="mr-1 bg-green-500 font-semibold  text-gray-100 py-1 px-4 pr-8 rounded-full leading-tight hover:bg-green-600">Download BAST</a>
               @else
-              <span href="" class="mr-1 bg-red-500 font-semibold  text-gray-100 py-1 px-4 pr-8 rounded-full leading-tight hover:bg-red-600">Bast belum di upload</span>
+              {{-- <span href="" class="mr-1 bg-red-500 font-semibold  text-gray-100 py-1 px-4 pr-8 rounded-full leading-tight hover:bg-red-600">Bast belum di upload</span> --}}
               @endif
 
               <a href="{{route('job.detail.client', $order)}}" class="bg-teal-600 font-semibold  text-gray-100 py-1 px-4 pr-8 rounded-full leading-tight hover:bg-blue-400">Detail</a>
+            </td>
+            <td class="px-4 py-3 text-sm">
+              @if ($order->bast)
+                  <p class="text-md text-gray-400">BAST Uploaded</p>
+              @else
+                <p class="text-xs text-gray-400">BAST Empty</p>
+              @endif
             </td>
             <td class="px-4 py-3 text-sm">
               {{$order->site}}

@@ -81,7 +81,7 @@ class FileController extends Controller
             'bast' => $bast,
         ]);
 
-        return redirect()->to('job-finish')->with('berhasil', 'BAST berhasil di upload.');
+        return redirect()->to('kordinator-finish')->with('berhasil', 'BAST berhasil di upload.');
     }
 
     public function downloadBast(Order $order)

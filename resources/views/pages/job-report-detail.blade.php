@@ -47,7 +47,7 @@
     <!-- end form -->
     @endif
     @if ($jobphotos == !null)
-        <a href="{{route('get.zip', $order)}}" class="flex mb-4 items-center justify-center w-full px-6 py-3 text-sm font-medium leading-5 text-white transition-all duration-300 bg-teal-500  rounded active:bg-teal-600 hover:bg-green-500 focus:outline-none focus:shadow-outline-teal">
+        <a href="{{route('get.zip', $order)}}" class="flex mb-4 items-center justify-center w-full px-6 py-3 text-xs font-medium leading-5 text-white transition-all duration-300 bg-teal-500  rounded active:bg-teal-600 hover:bg-green-500 focus:outline-none focus:shadow-outline-teal">
             Download Report
         </a>
     @endif
