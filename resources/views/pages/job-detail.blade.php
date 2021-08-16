@@ -170,23 +170,24 @@
         @csrf
         <div class="w-full mr-2">
           <input name="activity" type="text" class="  mb-2 block w-full bg-gray-200   text-gray-700  border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" placeholder="Kegiatan ...">
-          @error('activity') <span class="text-sm text-red-500">{{ $message }}</span> @enderror
         </div>
 
         <div class="flex items-center">
           <div class="mr-2">
             <input type="time" name="jam" class=" mb-2 block w-full bg-gray-200   text-gray-700  border border-gray-200 rounded py-2 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500">
-            @error('start') <span class="text-sm text-red-500">{{ $message }}</span> @enderror
           </div>
           <div class="mr-2">
             <input type="date" name="tanggal" class="mb-2 block w-full bg-gray-200   text-gray-700  border border-gray-200 rounded py-2 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500">
-            @error('finish') <span class="text-sm text-red-500">{{ $message }}</span> @enderror
           </div>
           <button type="submit" class="w-full px-5 mb-2 py-3 text-sm font-medium leading-5 text-white transition-colors duration-150 bg-green-600 border border-transparent rounded sm:w-auto sm:px-4 sm:py-2 active:bg-green-600 hover:bg-green-700 focus:outline-none focus:shadow-outline-teal">
             Save
           </button>
         </div>
       </form>
+      @error('activity') <span class="flex items-center justify-between p-4 mb-4 text-sm  text-purple-100 bg-red-500 rounded-lg shadow-md focus:outline-none focus:shadow-outline-purple">{{ $message }}</span> @enderror
+      @error('jam') <span class="flex items-center justify-between p-4 mb-4 text-sm  text-purple-100 bg-red-500 rounded-lg shadow-md focus:outline-none focus:shadow-outline-purple">{{ $message }}</span> @enderror
+      @error('tanggal') <span class="flex items-center justify-between p-4 mb-4 text-sm  text-purple-100 bg-red-500 rounded-lg shadow-md focus:outline-none focus:shadow-outline-purple">{{ $message }}</span> @enderror
+      
       @endif
 
 

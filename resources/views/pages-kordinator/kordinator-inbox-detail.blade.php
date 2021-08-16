@@ -10,6 +10,7 @@
         @csrf
 
         <!-- <div class="flex items-center mb-4"> -->
+            
         <div class="mb-4 flex items-center">
             <div class="w-1/4 mr-2">
                 {{-- <label for="" class="block uppercase tracking-wide dark:text-gray-300 text-gray-700 text-xs font-bold mb-2">Tanggapan</label> --}}
@@ -27,6 +28,9 @@
                 <button type="submit" name="submit" onclick="konfirmasi()" class=" mr-2 px-4 py-2 text-sm font-medium leading-5 text-white transition-all duration-300 bg-gradient-to-b from-blue-400 to-blue-500 hover:from-blue-300 hover:to-blue-500 rounded active:bg-teal-600 hover:bg-teal-800 focus:outline-none focus:shadow-outline-teal">OK</button>
             </div>
         </div>
+        @error('tanggapan') <span class="flex items-center justify-between p-4 mb-4 text-sm  text-purple-100 bg-red-500 rounded-lg shadow-md focus:outline-none focus:shadow-outline-purple">{{ $message }}</span> @enderror
+        @error('item_id') <span class="text-sm text-red-500">{{ $message }}</span> @enderror
+        
         <div id="kotak">
             <textarea name="alasan_penolakan" id="" cols="38" rows="5" placeholder=" Alasan Penolakan..."></textarea>
         </div>

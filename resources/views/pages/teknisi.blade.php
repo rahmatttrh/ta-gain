@@ -54,7 +54,7 @@
               <img width="75px" style="border-radius: 10px" src="{{asset('storage/' .$tek->foto_ktp)}}" alt="">    
             </td> --}}
             <td class="px-4 py-3 text-sm">
-              <img width="75px" class="rounded" src="{{asset('storage/' .$tek->foto_diri)}}" alt="">  
+              <img width="75px" class="rounded" src="{{asset('storage/app/' .$tek->foto_diri)}}" alt="">  
             </td>
                 <td class="px-4 py-3 text-sm">
                 <p class="">{{$tek->area}}</p>

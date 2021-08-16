@@ -51,7 +51,7 @@
             </td>
            
             <td class="px-4 py-3 text-sm">
-              <img width="75px" class="rounded" src="{{asset('storage/' .$kordi->foto_diri)}}" alt="">
+              <img width="75px" class="rounded" src="{{asset('storage/app/' .$kordi->foto_diri)}}" alt="">
             </td>
             <td class="px-4 py-3 text-sm">
               <p class="">{{$kordi->area}}</p>

@@ -56,6 +56,10 @@ class KordinatorController extends Controller
     // Setelah di respon oleh kordinator
     public function inboxRespond(Request $request)
     {
+        $request->validate([
+            'id_item' => 'required',
+            'tanggapan' => 'required'
+        ]);
         $arrayItem = $request->id_item;
         $jumlah = count($arrayItem);
 
