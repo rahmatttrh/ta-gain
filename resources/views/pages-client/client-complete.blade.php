@@ -9,7 +9,7 @@
    <table class="w-full whitespace-no-wrap">
      <thead>
        <tr
-       class="text-xs font-semibold tracking-wide text-left bg-gray-200 dark:bg-gray-900  text-gray-500 dark:text-gray-400 uppercase border-b dark:border-gray-700  "
+       class="text-xs font-semibold tracking-wide text-left bg-gray-50 dark:bg-gray-900  text-gray-500 dark:text-gray-400 uppercase border-b dark:border-gray-700  "
        >
          <th class="px-4 py-3">No</th>
          <th class="px-4 py-3">Aksi</th>

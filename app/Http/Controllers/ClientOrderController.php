@@ -119,7 +119,7 @@ class ClientOrderController extends Controller
             'status' => '7',
         ]);
 
-        return redirect('/client-finish')->with('success', 'Job Order berhasil di Approve!');
+        return redirect('/')->with('berhasil', 'Job Order berhasil di Approve!');
     }
 
     public function approveBast(Order $order)
@@ -127,10 +127,10 @@ class ClientOrderController extends Controller
 
 
         $order->where('id', request('id'))->update([
-            'status' => '8',
+            'status' => '9',
         ]);
 
-        return redirect('/client-ready')->with('success', 'Job Order berhasil di Approve!');
+        return redirect('/client-complete')->with('success', 'Job Order berhasil di Approve!');
     }
 
     public function profile()
@@ -142,7 +142,7 @@ class ClientOrderController extends Controller
 
     public function jobreport()
     {
-        $orders = Order::where('pelanggan_id', $this->getClientId())->where('status', 6)->paginate(100);
+        $orders = Order::where('pelanggan_id', $this->getClientId())->where('status', 6)->orWhere('status', 7)->paginate(100);
 
         return view('pages-client.client-jobreport', [
             'orders' => $orders
@@ -192,7 +192,7 @@ class ClientOrderController extends Controller
                 ]);
         }, 3);
 
-        return redirect($request->order_id . '/jobreport-detail/client')->with('success', 'All good!');
+        return redirect($request->order_id . '/jobreport-detail')->with('berhasil', 'Report Order Berhasil di Reject');
     }
 
     public function approveJobreport(Request $request)
@@ -204,7 +204,7 @@ class ClientOrderController extends Controller
                 ->update(['status' => '2']);
         }, 3);
 
-        return redirect($request->order_id . '/jobreport-detail/client')->with('success', 'All good!');
+        return redirect($request->order_id . '/jobreport-detail')->with('berhasil', 'Report Berhasil di Approve');
     }
 
     public function finish()
@@ -222,7 +222,7 @@ class ClientOrderController extends Controller
     public function complete()
     {
         return view('pages-client.client-complete', [
-            'orders' => Order::where('pelanggan_id', $this->getClientId())->where('status', 9)->paginate(100)
+            'orders' => Order::where('pelanggan_id', $this->getClientId())->where('status', 8)->OrWhere('status', 9)->paginate(100)
         ]);
     }
 }

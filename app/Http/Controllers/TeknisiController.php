@@ -160,7 +160,7 @@ class TeknisiController extends Controller
 
     public function detailJobreport(Order $order)
     {
-        return view('pages.job-report-detail', [
+        return view('pages-client.client-jobreport-detail', [
             'teknisi' => Teknisi::where('email', auth()->user()->email)->get()->first(),
             'order' => Order::where('id', $order->id)->get()->first(),
             'activities' => jobActivity::where('order_id', $order->id)->paginate(100),

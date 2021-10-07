@@ -8,8 +8,8 @@ Route::middleware('auth')->group(function () {
     Route::get('/', [PagesController::class, 'Dashboard']);
     Route::get('/map-site', [PagesController::class, 'DashboardMapSite'])->name('map.site');
     // Route::get('job-progres', [JobController::class, 'progres'])->name('job.progres');
-    Route::get('job-detail', [JobController::class, 'detail'])->name('job.detail');
-    Route::get('{order:id}/jobreport-detail/', [TeknisiController::class, 'detailJobreport'])->name('jobreport.detail');
+    // Route::get('job-detail', [JobController::class, 'detail'])->name('job.detail');
+    // Route::get('{order:id}/jobreport-detail/', [TeknisiController::class, 'detailJobreport'])->name('jobreport.detail');
     Route::get('/foto-report/{job_photo:id}', [ClientOrderController::class, 'fotoReport'])->name('report.foto');
 
     Route::get('master-bast/{order:id}', [FileController::class, 'bastMaster'])->name('job.bast');
@@ -32,6 +32,15 @@ Route::middleware(['auth', 'accessAdmin'])->group(function () {
     Route::get('{pelanggan:id}/edit-client', [PelangganController::class, 'edit'])->name('client.edit');
     Route::put('{pelanggan:id}/update-client', [PelangganController::class, 'update'])->name('client.update');
     Route::get('{pelanggan:id}/delete-client', [PelangganController::class, 'delete'])->name('client.delete');
+
+    // Route::get('{order:id}/job-detail', [JobController::class, 'detail'])->name('job.detail.client');
+    Route::get('{order:id}/job-detail/admin', [JobController::class, 'detail'])->name('job.detail.client');
+    Route::get('/jobreport', [ClientOrderController::class, 'jobreport'])->name('client.jobreport');
+    Route::get('{order:id}/jobreport-detail', [ClientOrderController::class, 'detailJobreport'])->name('client.jobreport.detail');
+    Route::post('/jobreport-reject', [ClientOrderController::class, 'rejectJobreport'])->name('client.jobreport.reject');
+    Route::post('/jobreport-approve', [ClientOrderController::class, 'approveJobreport'])->name('client.jobreport.approve');
+    Route::post('/approve/{order:id}', [ClientOrderController::class, 'approve'])->name('job.approve');
+    Route::post('/approve-bast/{order:id}', [ClientOrderController::class, 'approveBast'])->name('approve.bast');
 
     Route::get('/kordinator', KordinatorController::class)->name('kordinator');
     Route::get('kordinator/create', [KordinatorController::class, 'create'])->name('kordinator.create');
@@ -64,7 +73,7 @@ Route::middleware(['auth', 'accessAdmin'])->group(function () {
     Route::post('job-delegasi', [JobController::class, 'handOver'])->name('job.delegasi');
 
     // Route::get('job-progres', [JobController::class, 'progres'])->name('job.progres');
-    Route::get('{order:id}/job-detail/admin', [JobController::class, 'detail'])->name('job.detail.admin');
+    Route::get('{order:id}/job-detail/administratot', [JobController::class, 'detail'])->name('job.detail.admin');
     Route::post('payment/{order:id}', [JobController::class, 'paymentKonfirmasi'])->name('payment.konfirmasi');
 
 
@@ -85,7 +94,7 @@ Route::middleware(['auth', 'accessAdmin'])->group(function () {
 // Hak akses untuk Client
 Route::middleware(['auth', 'accessClient'])->group(function () {
     Route::get('/profile/client', [ClientOrderController::class, 'profile'])->name('profile.client');
-    Route::get('{order:id}/job-detail/client', [JobController::class, 'detail'])->name('job.detail.client');
+    // Route::get('{order:id}/job-detail/client', [JobController::class, 'detail'])->name('job.detail.client');
     Route::put('{pelanggan:id}/update-client-profile', [PelangganController::class, 'update'])->name('client.update.profile');
 
     Route::get('/client-order', [ClientOrderController::class, 'index'])->name('client-order');
@@ -94,10 +103,10 @@ Route::middleware(['auth', 'accessClient'])->group(function () {
 
     Route::post('/job-cancel', [ClientOrderController::class, 'cancel'])->name('job.cancel.client');
 
-    Route::get('/client-jobreport', [ClientOrderController::class, 'jobreport'])->name('client.jobreport');
-    Route::get('{order:id}/jobreport-detail/client', [ClientOrderController::class, 'detailJobreport'])->name('client.jobreport.detail');
-    Route::post('/client-jobreport-reject', [ClientOrderController::class, 'rejectJobreport'])->name('client.jobreport.reject');
-    Route::post('/client-jobreport-approve', [ClientOrderController::class, 'approveJobreport'])->name('client.jobreport.approve');
+    // Route::get('/client-jobreport', [ClientOrderController::class, 'jobreport'])->name('client.jobreport');
+    // Route::get('{order:id}/jobreport-detail/client', [ClientOrderController::class, 'detailJobreport'])->name('client.jobreport.detail');
+    // Route::post('/client-jobreport-reject', [ClientOrderController::class, 'rejectJobreport'])->name('client.jobreport.reject');
+    // Route::post('/client-jobreport-approve', [ClientOrderController::class, 'approveJobreport'])->name('client.jobreport.approve');
 
 
     Route::get('/client-finish', [ClientOrderController::class, 'finish'])->name('finish.order');
@@ -105,8 +114,8 @@ Route::middleware(['auth', 'accessClient'])->group(function () {
     Route::get('/client-ready', [ClientOrderController::class, 'ready'])->name('ready.order');
     Route::get('/client-complete', [ClientOrderController::class, 'complete'])->name('complete.order');
 
-    Route::post('/approve/{order:id}', [ClientOrderController::class, 'approve'])->name('job.approve');
-    Route::post('/approve-bast/{order:id}', [ClientOrderController::class, 'approveBast'])->name('approve.bast');
+    // Route::post('/approve/{order:id}', [ClientOrderController::class, 'approve'])->name('job.approve');
+    // Route::post('/approve-bast/{order:id}', [ClientOrderController::class, 'approveBast'])->name('approve.bast');
 });
 
 // Hak akses untuk Kordinator

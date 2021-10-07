@@ -25,7 +25,7 @@
                 <span id="total" class="w-full mr-2 bg-gray-200 border border-gray-200 text-gray-700 py-2 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500"></span>
             </div>
             <div class="w-1/4 mr-2">
-                <button type="submit" name="submit" onclick="konfirmasi()" class=" mr-2 px-4 py-2 text-sm font-medium leading-5 text-white transition-all duration-300 bg-gradient-to-b from-blue-400 to-blue-500 hover:from-blue-300 hover:to-blue-500 rounded active:bg-teal-600 hover:bg-teal-800 focus:outline-none focus:shadow-outline-teal">OK</button>
+                <button type="submit" name="submit" onclick="konfirmasi()" class=" mr-2 px-4 py-2 text-sm font-medium leading-5 text-white transition-all duration-300 bg-blue-400 hover:from-blue-300 hover:to-blue-500 rounded active:bg-teal-600 hover:bg-teal-800 focus:outline-none focus:shadow-outline-teal">OK</button>
             </div>
         </div>
         @error('tanggapan') <span class="flex items-center justify-between p-4 mb-4 text-sm  text-purple-100 bg-red-500 rounded-lg shadow-md focus:outline-none focus:shadow-outline-purple">{{ $message }}</span> @enderror

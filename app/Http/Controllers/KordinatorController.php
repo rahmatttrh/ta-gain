@@ -113,7 +113,6 @@ class KordinatorController extends Controller
     {
         $arrayItem = $request->id_item;
         $jumlah = count($arrayItem);
-
         $teknisis = $request->teknisis;
 
         for ($i = 0; $i < $jumlah; $i++) {

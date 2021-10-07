@@ -30,7 +30,8 @@
                         </td>
                         <td class="px-4 py-3 text-sm">
                             
-                            <a href="{{ route('report.foto', $job) }}"><img  width="75px" style="cursor: pointer;" class="rounded" src="{{asset('storage/app/' .$job->foto_pekerjaan)}}" alt=""></a>
+                            <a href="{{ route('report.foto', $job) }}"><img  width="75px" style="cursor: pointer;" class="rounded" src="{{asset('storage/' .$job->foto_pekerjaan)}}" alt=""></a>
+                            {{-- <a href="{{ route('report.foto', $job) }}"><img  width="75px" style="cursor: pointer;" class="rounded" src="{{asset('storage/app/' .$job->foto_pekerjaan)}}" alt=""></a> --}}
                         </td>
                         <td class="px-4 py-3 text-sm">
                             <p class="font-medium">{{$job->judul_foto}}</p>
@@ -44,13 +45,18 @@
                             if ($job->status == '1') {
                                 $kondisi = $kondisi * 0;
                             ?>
+                            @if (auth()->user()->isAdmin() || auth()->user()->isClient())
                                 <a href='#setuju' rel="modal:open">
                                     <button class="modalApprove mr-2 px-4 py-1  leading-5 text-white transition-all duration-300 bg-green-500 hover:bg-green-700 rounded-full focus:outline-none focus:shadow-outline-teal" data-id="{{$job->id}}">Approve</button>
                                 </a>
 
                                 <a href='#tolak' rel="modal:open">
-                                    <button class="modalReject mr-2 px-4 py-1   leading-5 text-white transition-all duration-300 bg-red-500 hover:bg-red-700 rounded-full active:bg-teal-600 hover:bg-teal-800 focus:outline-none focus:shadow-outline-teal" data-id="{{$job->id}}">Reject</button>
+                                    <button class="modalReject mr-2 px-4 py-1   leading-5 text-white transition-all duration-300 bg-red-400 hover:bg-red-600 rounded-full active:bg-teal-600 hover:bg-teal-800 focus:outline-none focus:shadow-outline-teal" data-id="{{$job->id}}">Reject</button>
                                 </a>
+                            @else
+                                <p class='text-md text-sm text-blue-400'> Menunggu Validasi</p>
+                            @endif
+
                             <?php } else if ($job->status == '2') {
                                 $kondisi = $kondisi * 1;
                             ?>
@@ -62,25 +68,31 @@
                             <?php  } ?>
 
                             <div id="setuju" class="modal">
-                                <h2 class="mt-3 mb-3"> Konfimasi</h2>
+                                {{-- <h2 class="mt-3 mb-3"> Konfimasi</h2> --}}
+                                {{-- <hr> --}}
                                 <form action="{{route('client.jobreport.approve')}}" method="post">
                                     @csrf
                                     <input type="hidden" name="job_photo_id" value="{{$job->teknisi_id}} id="job_photo_id">
                                     <input type="hidden" name="job_photo_id" id="job_photo_id">
                                     <input type="hidden" name="order_id" id="" value="{{$job->order_id}}">
-                                    <h3> Apakah anda yakin menyetujui foto pekerjaan tersebut ? </h3>
-                                    <button type="submit" name="submit" class="mt-3 mb-3 mr-2 px-4 py-2 text-sm font-medium leading-5 text-white transition-all duration-300 bg-gradient-to-b from-blue-400 to-blue-500 hover:from-blue-300 hover:to-blue-500 rounded active:bg-teal-600 hover:bg-teal-800 focus:outline-none focus:shadow-outline-teal">Ya, saya yakin</button>
+                                    <h3> Approve Report ini ? </h3>
+                                    <br>
+                                    <hr>
+                                    <button type="submit" name="submit" class="mt-3 mb-3 mr-2 px-4 py-2 text-sm font-medium leading-5 text-white transition-all duration-300 bg-blue-400  rounded active:bg-teal-600 hover:bg-blue-600 focus:outline-none focus:shadow-outline-teal">Approve</button>
                                 </form>
                             </div>
 
                             <div id="tolak" class="modal">
                                 <h2 class="mt-3 mb-3"> Alasan Penolakan</h2>
+                                <hr>
+                                <br>
                                 <form action="{{route('client.jobreport.reject')}}" method="post">
                                     @csrf
                                     <input type="hidden" name="job_photo_id" id="job_photo_id2">
                                     <input type="hidden" name="order_id" id="" value="{{$job->order_id}}">
                                     <textarea class="appearance-none block w-full bg-gray-200   text-gray-700  border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" name="keterangan" id="" cols="44" rows="10" placeholder=" Foto yang kurang jelas"></textarea><br>
-                                    <button type="submit" name="submit" class="mt-3 mb-3 mr-2 px-4 py-2 text-sm font-medium leading-5 text-white transition-all duration-300 bg-gradient-to-b from-blue-400 to-blue-500 hover:from-blue-300 hover:to-blue-500 rounded active:bg-teal-600 hover:bg-teal-800 focus:outline-none focus:shadow-outline-teal">Submit</button>
+                                    <hr>
+                                    <button type="submit" name="submit" class="mt-3 mb-3 mr-2 px-4 py-2 text-sm font-medium leading-5 text-white transition-all duration-300 bg-red-400  rounded active:bg-teal-600 hover:bg-red-600 focus:outline-none focus:shadow-outline-teal">Reject</button>
                                 </form>
                             </div>
                         </td>
@@ -91,13 +103,17 @@
         </div>
     </div>
     <!-- Endtable -->
-    <?php if ($kondisi == '1') { ?>
-        <form action="{{route('job.approve', $order)}}" method="post" id="approve">
-            @csrf
-            <h3> Apakah anda yakin sudah memverifikasi job report ini? </h3>
-            <button type="submit" name="submit" class="mt-3 mb-3 mr-2 px-4 py-2 text-sm font-medium leading-5 text-white transition-all duration-300 bg-gradient-to-b from-blue-400 to-blue-500 hover:from-blue-300 hover:to-blue-500 rounded active:bg-teal-600 hover:bg-teal-800 focus:outline-none focus:shadow-outline-teal">Ya, saya yakin dan saya ingin memverifikasi</button>
-        </form>
-    <?php } ?>
+    @if ($order->status == '6')
+        <?php if ($kondisi == '1') { ?>
+
+            <form action="{{route('job.approve', $order)}}" method="post" id="approve">
+                @csrf
+                <h3> Approve Semua Report? </h3>
+                <button type="submit" name="submit" class="mt-3 mb-3 mr-2 px-4 py-2 text-sm font-medium leading-5 text-white transition-all duration-300 bg-blue-400 hover:from-blue-300 hover:to-blue-500 rounded active:bg-teal-600 hover:bg-teal-800 focus:outline-none focus:shadow-outline-teal">Approve</button>
+            </form>
+        <?php } ?>
+    @endif
+    
 </x-app-layout>
 
 <script>

@@ -55,7 +55,7 @@
     <span class="ml-4">Validate</span>
   </a>
 </li>
-<li class="relative px-6 py-1">
+{{-- <li class="relative px-6 py-1">
   @if (request()->is('kordinator-payment'))
   <span class="absolute inset-y-0 left-0 w-2 bg-blue-500 rounded-tr-lg rounded-br-lg" aria-hidden="true"></span>
   @endif
@@ -66,7 +66,7 @@
     </svg>
     <span class="ml-4">Payment</span>
   </a>
-</li>
+</li> --}}
 <li class="relative px-6 py-1">
   @if (request()->is('kordinator-complete'))
   <span class="absolute inset-y-0 left-0 w-2 bg-blue-500 rounded-tr-lg rounded-br-lg" aria-hidden="true"></span>
@@ -78,7 +78,7 @@
     <span class="ml-4">Complete</span>
   </a>
 </li>
-<li class="relative px-6 py-1">
+{{-- <li class="relative px-6 py-1">
   @if (request()->is('kordinator-wallet') || request()->is('kordinator-withdraw'))
   <span class="absolute inset-y-0 left-0 w-2 bg-blue-500 rounded-tr-lg rounded-br-lg" aria-hidden="true"></span>
   @endif
@@ -89,4 +89,4 @@
     </svg>
     <span class="ml-4">E-Wallet</span>
   </a>
-</li>
+</li> --}}

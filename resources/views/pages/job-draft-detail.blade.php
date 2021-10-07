@@ -4,7 +4,7 @@
     @endsection
     
     <div class="flex">
-        <a href="{{route('job.draft')}}" class=" mb-2 w-12 f item-center  mr-2 shadow-xs dark:bg-gray-700 text-blue-700 font-bold  p-3 rounded">
+        <a href="{{route('job.draft')}}" class=" mb-2 w-12 f item-center  mr-2 shadow-xs dark:bg-gray-700 text-blue-400 font-bold  p-3 rounded">
           <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm.707-10.293a1 1 0 00-1.414-1.414l-3 3a1 1 0 000 1.414l3 3a1 1 0 001.414-1.414L9.414 11H13a1 1 0 100-2H9.414l1.293-1.293z" clip-rule="evenodd"></path></svg>
         </a>
         <x-header><span class="font-bold">LIST</span> DRAFT JOB ORDER</x-header>
@@ -16,12 +16,12 @@
         @csrf
         <input type="hidden" name="pelanggan_id" value="{{$pelanggan_id}}">
         <div class="flex items-center mb-4">
-            <button type="submit" name="submit" class="mr-2 px-6 py-3 text-sm font-medium leading-5 text-white transition-all duration-300 bg-gradient-to-b from-blue-400 to-blue-500 hover:from-blue-300 hover:to-blue-500 rounded active:bg-teal-600 hover:bg-teal-800 focus:outline-none focus:shadow-outline-teal">Publish</button>
+            <button type="submit" name="submit" class="mr-2 px-6 py-3 text-sm  text-white transition-all duration-300 bg-blue-400 hover:from-blue-300 hover:to-blue-500 rounded active:bg-teal-600 hover:bg-teal-800 focus:outline-none focus:shadow-outline-teal">Publish</button>
             <div class="flex items-center px-6 py-3  ">
-                <svg class="w-7 h-7 text-blue-500 " fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                <svg class="w-7 h-7 text-blue-400 " fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
                     <path d="M3 1a1 1 0 000 2h1.22l.305 1.222a.997.997 0 00.01.042l1.358 5.43-.893.892C3.74 11.846 4.632 14 6.414 14H15a1 1 0 000-2H6.414l1-1H14a1 1 0 00.894-.553l3-6A1 1 0 0017 3H6.28l-.31-1.243A1 1 0 005 1H3zM16 16.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0zM6.5 18a1.5 1.5 0 100-3 1.5 1.5 0 000 3z"></path>
                 </svg>
-                <span id="total" class=" text-md font-bold text-blue-500"></span>
+                <span id="total" class=" text-md font-bold text-blue-400"></span>
 
             </div>
         </div>

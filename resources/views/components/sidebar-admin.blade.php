@@ -94,7 +94,7 @@
   </a>
 </li>
 
-<li class="relative px-6 py-1">
+{{-- <li class="relative px-6 py-1">
   @if (request()->is('job-ready-to-pay'))
   <span class="absolute inset-y-0 left-0 w-2 bg-blue-500 rounded-tr-lg rounded-br-lg" aria-hidden="true"></span>
   @endif
@@ -105,7 +105,7 @@
     </svg>
     <span class="ml-4">Payment</span>
   </a>
-</li>
+</li> --}}
 <li class="relative px-6 py-1">
   @if (request()->is('job-complete'))
   <span class="absolute inset-y-0 left-0 w-2 bg-blue-500 rounded-tr-lg rounded-br-lg" aria-hidden="true"></span>

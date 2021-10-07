@@ -202,7 +202,7 @@ class JobController extends Controller
     // menampilkan job order yang sudah selesai (admin upload BA)
     public function finish()
     {
-        return view('pages.job-finish', [
+        return view('pages-client.client-jobreport', [
             'orders' => Order::where('status', 6)->orWhere('status', 7)->orderBy('id', 'asc')->paginate(100)
         ]);
     }

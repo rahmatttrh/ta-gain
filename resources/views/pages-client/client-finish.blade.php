@@ -8,7 +8,7 @@
     <div class="w-full overflow-x-auto">
       <table class="w-full whitespace-no-wrap">
         <thead>
-          <tr class="text-xs font-semibold tracking-wide text-left bg-gray-200 dark:bg-gray-900  text-gray-500 dark:text-gray-400 uppercase border-b dark:border-gray-700  ">
+          <tr class="text-xs font-semibold tracking-wide text-left bg-gray-50 dark:bg-gray-900  text-gray-500 dark:text-gray-400 uppercase border-b dark:border-gray-700  ">
             <th class="px-4 py-3">No</th>
             <th class="px-4 py-3">Action</th>
             <th class="px-4 py-3">Status</th>
@@ -35,7 +35,7 @@
               {{-- <span href="" class="mr-1 bg-red-500   text-gray-100 py-1 px-4 pr-8 rounded-full leading-tight hover:bg-red-600">Bast belum di upload</span> --}}
               @endif
 
-              <a href="{{route('job.detail.client', $order)}}" class="bg-teal-600   text-gray-100 py-1 px-4 pr-8 rounded-full leading-tight hover:bg-blue-400">Detail</a>
+              <a href="{{route('job.detail', $order)}}" class="bg-teal-600   text-gray-100 py-1 px-4 pr-8 rounded-full leading-tight hover:bg-blue-400">Detail</a>
             </td>
             <td class="px-4 py-3 text-sm">
               @if ($order->bast)

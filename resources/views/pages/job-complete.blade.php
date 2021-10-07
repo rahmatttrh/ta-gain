@@ -28,7 +28,7 @@
         </td>
         <td class="px-4 py-3 flex text-xs">
           
-          <a href="{{route('job.detail.admin', $order)}}" class=" bg-teal-600   text-gray-100 py-1 px-4 pr-8 rounded-full leading-tight hover:bg-blue-400">Detail</a>
+          <a href="{{route('job.detail.client', $order)}}" class=" bg-teal-600   text-gray-100 py-1 px-4 pr-8 rounded-full leading-tight hover:bg-blue-400">Detail</a>
          </td>
          <td class="px-4 py-3 ">
             <p class="text-sm">{{$order->site}}</p>

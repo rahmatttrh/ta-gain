@@ -6,7 +6,7 @@
 
   <div class="grid gap-2 mb-4  md:grid-cols-7 grid-cols-2">
     <a href="{{route('kordinator.create')}}" class="">
-      <div class="flex  items-center justify-center text-gray-100 p-3 bg-gradient-to-b from-blue-400 to-blue-500 hover:from-blue-300 hover:to-blue-500 rounded ">
+      <div class="flex  items-center justify-center text-gray-100 p-3 bg-blue-400 hover:from-blue-300 hover:to-blue-500 rounded ">
         <p class=" text-sm font-medium ">
           Create
         </p>
@@ -51,7 +51,8 @@
             </td>
            
             <td class="px-4 py-3 text-sm">
-              <img width="75px" class="rounded" src="{{asset('storage/app/' .$kordi->foto_diri)}}" alt="">
+              {{-- <img width="75px" class="rounded" src="{{asset('storage/app/' .$kordi->foto_diri)}}" alt=""> --}}
+              <img width="75px" class="rounded" src="{{asset('storage/' .$kordi->foto_diri)}}" alt="">
             </td>
             <td class="px-4 py-3 text-sm">
               <p class="">{{$kordi->area}}</p>
