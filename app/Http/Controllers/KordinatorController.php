@@ -111,6 +111,12 @@ class KordinatorController extends Controller
     // Hand Over 
     public function handOver(Request $request)
     {
+
+        $request->validate([
+            'teknisis' => 'required',
+            'id_item' => 'required'
+        ]);
+
         $arrayItem = $request->id_item;
         $jumlah = count($arrayItem);
         $teknisis = $request->teknisis;

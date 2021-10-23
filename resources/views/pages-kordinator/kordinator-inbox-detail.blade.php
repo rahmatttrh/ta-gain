@@ -28,8 +28,19 @@
                 <button type="submit" name="submit" onclick="konfirmasi()" class=" mr-2 px-4 py-2 text-sm font-medium leading-5 text-white transition-all duration-300 bg-blue-400 hover:from-blue-300 hover:to-blue-500 rounded active:bg-teal-600 hover:bg-teal-800 focus:outline-none focus:shadow-outline-teal">OK</button>
             </div>
         </div>
-        @error('tanggapan') <span class="flex items-center justify-between p-4 mb-4 text-sm  text-purple-100 bg-red-500 rounded-lg shadow-md focus:outline-none focus:shadow-outline-purple">{{ $message }}</span> @enderror
-        @error('item_id') <span class="text-sm text-red-500">{{ $message }}</span> @enderror
+        @error('tanggapan')
+        <div class="flex flex-col  mb-2 bg-red-500 p-2 rounded">
+             <span class="text-sm w-full text-gray-100">Tanggapan belum dipilih !</span> 
+            {{-- @error('item_id') <span class="text-sm w-full text-red-500">Harga belum di isi</span> @enderror --}}
+        </div>
+        @enderror
+        @error('id_item')
+        <div class="flex flex-col  mb-2 bg-red-500 p-2 rounded">
+             <span class="text-sm w-full text-gray-100">Site Order belum dipilih !</span> 
+            {{-- @error('item_id') <span class="text-sm w-full text-red-500">Harga belum di isi</span> @enderror --}}
+        </div>
+        @enderror
+        
         
         <div id="kotak">
             <textarea name="alasan_penolakan" id="" cols="38" rows="5" placeholder=" Alasan Penolakan..."></textarea>
