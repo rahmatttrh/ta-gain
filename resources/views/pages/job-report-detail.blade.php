@@ -89,7 +89,7 @@
                         
                         @if ($job->status == '1')
                         <td class="px-4 py-3 text-xs">
-                            <p class='text-md text-xs text-blue-400'> Menunggu Validasi Client</p>
+                            <p class='text-md text-xs text-blue-400'> Menunggu Validasi</p>
                         </td>
                         <td></td>
                         @elseif($job->status == '2')

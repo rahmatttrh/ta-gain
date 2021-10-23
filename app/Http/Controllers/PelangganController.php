@@ -34,8 +34,10 @@ class PelangganController extends Controller
             'namaPerusahaan' => 'required',
             'email' => 'required',
             'alamatPerusahaan' => 'required',
-            'gm' => 'required',
-            'pm' => 'required'
+            'gm' => 'required|alpha|min:2',
+            'pm' => 'required|alpha|min:2',
+            'nogm' => 'required|numeric|min:5',
+            'nopm' => 'required|numeric|min:5',
 
         ]);
 

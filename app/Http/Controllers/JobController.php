@@ -24,7 +24,7 @@ class JobController extends Controller
     public function __invoke(Request $request)
     {
         return view('pages.job-progres', [
-            'orders' => Order::where('status', 5)->orWhere('status', 4)->orWhere('status', 3)->orWhere('status', 202)->orderBy('id', 'asc')->paginate(100),
+            'orders' => Order::where('status', 5)->orWhere('status', 4)->orWhere('status', 3)->orWhere('status', 202)->orderBy('updated_at', 'asc')->paginate(100),
             'kordinators' => Kordinator::get()->all()
         ]);
     }
@@ -169,8 +169,13 @@ class JobController extends Controller
         ]);
     }
 
+    // DELEGASI KE KORDINATOR
     public function handOver(Request $request)
     {
+        $request->validate(([
+            'kordinator' => 'required',
+            'id_item' => 'required'
+        ]));
         $arrayItem = $request->id_item;
         $jumlah = count($arrayItem);
 
@@ -182,7 +187,7 @@ class JobController extends Controller
                     'status' => '3'
                 ]);
         }
-        return redirect('/job-delegasi')->with('berhasil', 'Job order berhasil di delegasi ke kordinator.');
+        return redirect('/job-order')->with('berhasil', 'Job order berhasil di delegasi ke kordinator.');
     }
 
     // public function detail()

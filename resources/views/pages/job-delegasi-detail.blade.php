@@ -20,7 +20,7 @@
         <div class="mb-4 flex items-end">
             <div class="w-1/4 mr-2">
                 <label for="" class="block uppercase tracking-wide dark:text-gray-300 text-gray-700 text-xs font-bold mb-2">Kordinator</label>
-                <select name="kordinator" class="w-full mr-2 bg-gray-200 border border-gray-200 text-gray-700 py-2 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-state" required>
+                <select name="kordinator" id="kordinator" class="w-full mr-2 bg-gray-200 border border-gray-200 text-gray-700 py-2 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-state" required>
                     <option disabled selected>Pilih</option>
                     @foreach ($kordinators as $kordinator)
                     <option value="{{$kordinator->id}}">{{$kordinator->nama}}</option>
@@ -36,9 +36,21 @@
 
             </div>
             <div class="w-1/4 mr-2">
-                <button type="submit" name="submit" onclick="konfirmasi()" class="mr-2 px-6 py-2 text-sm  text-white transition-all duration-300 bg-blue-400 hover:from-blue-300 hover:to-blue-500 rounded active:bg-teal-600 hover:bg-teal-800 focus:outline-none focus:shadow-outline-teal">Delegasi</button>
+                <button type="submit" name="submit"  class="mr-2 px-6 py-2 text-sm  text-white transition-all duration-300 bg-blue-400 hover:from-blue-300 hover:to-blue-500 rounded active:bg-teal-600 hover:bg-teal-800 focus:outline-none focus:shadow-outline-teal">Delegasi</button>
             </div>
         </div>
+        @error('kordinator')
+        <div class="flex flex-col  mb-2 bg-red-500 p-2 rounded">
+             <span class="text-sm w-full text-gray-100">Kordinator belum dipilih !</span> 
+            {{-- @error('item_id') <span class="text-sm w-full text-red-500">Harga belum di isi</span> @enderror --}}
+        </div>
+        @enderror
+        @error('id_item')
+        <div class="flex flex-col  mb-2 bg-red-500 p-2 rounded">
+             <span class="text-sm w-full text-gray-100">Site Order belum dipilih !</span> 
+            {{-- @error('item_id') <span class="text-sm w-full text-red-500">Harga belum di isi</span> @enderror --}}
+        </div>
+        @enderror
 
 
 

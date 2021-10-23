@@ -152,11 +152,11 @@ class KordinatorController extends Controller
     {
         // Validasi
         request()->validate([
-            'namaKordinator' => 'required',
-            'noKordinator' => 'required',
+            'namaKordinator' => 'required|alpha|min:2',
+            'noKordinator' => 'required|numeric',
             'email' => 'required',
             'area' => 'required',
-            'noRek' => 'required',
+            'noRek' => 'required|numeric',
             // Cek jika ada input foto maka formatnya harus image
             'fotoKtp' => request('fotoKtp') ? 'image|mimes:jpg,jpeg,png' : '',
             'fotoDiri' => request('fotoDiri') ? 'image|mimes:jpg,jpeg,png' : '',

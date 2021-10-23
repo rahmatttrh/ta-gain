@@ -24,14 +24,27 @@
                      <option value="{{$client->id}}">{{$client->nama}}</option>
                    @endforeach
                  </select>
+                 {{-- @error('client') <span class="text-sm text-red-500">{{ $message }}</span> @enderror --}}
              </div>
            
              <div class="form-group mt-4 mb-4">
                  <label for="exampleFormControlFile1" class="block uppercase tracking-wide dark:text-gray-300 text-gray-700 text-xs font-bold mb-2">Upload file excel</label>
                  <input type="file" name="excel" class="w-full bg-gray-200   text-gray-700  border border-gray-200  rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500">
-                 @error('excel') <span class="text-sm text-red-500">{{ $message }}</span> @enderror
+                 {{-- @error('excel') <span class="text-sm text-red-500">{{ $message }}</span> @enderror --}}
              </div>
-             
+             @if (count($errors) > 0)
+              <div class="row bg-red-500 p-2 rounded  mb-2">
+                  <div class="col-md-8 col-md-offset-1 ">
+                    <div class="alert alert-danger alert-dismissible text-gray-100">
+                        {{-- <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button> --}}
+                        <h4 class="text-md"><i class="icon fa fa-ban"></i>Ups!</h4>
+                        @foreach($errors->all() as $error)
+                        <span class="text-xs">{{ $error }}</span> <br>
+                        @endforeach      
+                    </div>
+                  </div>
+              </div>
+              @endif
                  <button type="submit" class="w-full px-5  text-xs font-medium  text-white transition-colors duration-150 bg-teal-600 border border-transparent rounded sm:w-auto sm:px-4 py-2 active:bg-teal-600 hover:bg-blue-400 focus:outline-none focus:shadow-outline-teal">Create</button>
               
          </form>

@@ -5,6 +5,7 @@ namespace App\Imports;
 use App\Models\Order;
 use Maatwebsite\Excel\Concerns\ToModel;
 use Maatwebsite\Excel\Concerns\WithHeadingRow;
+use Illuminate\Support\Facades\Validator;
 
 class OrderImport implements ToModel, WithHeadingRow
 {
@@ -15,9 +16,9 @@ class OrderImport implements ToModel, WithHeadingRow
      */
     public function model(array $row)
     {
-        if ($row['site'] == 'Wajib') {
-            return null;
-        }
+        // if ($row['site'] == 'Wajib') {
+        //     return null;
+        // }
 
         // $unix_date = ($row['tanggal'] - 25569) * 86400;
         // $tanggal = date("Y-m-d", $unix_date);
@@ -30,6 +31,12 @@ class OrderImport implements ToModel, WithHeadingRow
 
         // $time_dur = $row['waktu_pengisian'] * 86400;
         // $waktu_pengisian = date('H:i', $time_dur);
+
+        Validator::make($row, [
+             'site' => 'required',
+             'provinsi' => 'required',
+             'kabupaten' => 'required',
+         ])->validate();
 
         return new Order([
             //

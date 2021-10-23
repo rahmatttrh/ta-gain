@@ -31,11 +31,11 @@ class TeknisiController extends Controller
     public function store()
     {
         request()->validate([
-            'namaTeknisi' => 'required',
-            'noTeknisi' => 'required',
+            'namaTeknisi' => 'required|alpha|min:2',
+            'noTeknisi' => 'required|numeric|min:5',
             'email' => 'required',
             'area' => 'required',
-            'noRek' => 'required',
+            'noRek' => 'required|numeric|min:5',
             'fotoKtp' => request('fotoKtp') ? 'image|mimes:jpg,jpeg,png' : '',
             'fotoDiri' => request('fotoDiri') ? 'image|mimes:jpg,jpeg,png' : '',
         ]);

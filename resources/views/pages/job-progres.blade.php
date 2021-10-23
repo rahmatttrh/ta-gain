@@ -10,15 +10,16 @@
   <div class="w-full overflow-hidden rounded-lg shadow-xs mb-5">
     <div class="w-full overflow-x-auto">
       <x-alert></x-alert>
-      <table class="w-full whitespace-no-wrap">
+      <table class="w-full whitespace-no-wrap basic-datatables">
         <thead>
           <tr class="text-xs font-semibold tracking-wide text-left text-gray-500 uppercase border-b dark:border-gray-700 bg-gray-50 dark:text-gray-400 dark:bg-gray-800">
             <th class="px-4 py-3">No</th>
-            <th class="px-4 py-3"></th>
+            <th class="px-4 py-3">Action</th>
+            <th class="px-4 py-3">Site</th>
             <th class="px-4 py-3">Status</th>
             <th class="px-4 py-3">Kordinator</th>
             <th class="px-4 py-3">Client</th>
-            <th class="px-4 py-3">Site</th>
+            
             {{-- <th class="px-4 py-3">Harga</th> --}}
           </tr>
         </thead>
@@ -31,6 +32,11 @@
             <td class="px-4 py-3 text-xs flex items-center">
               <a href="{{route('job.edit', $order)}}" class=" mr-2 bg-green-400  text-gray-100 py-1 px-4 rounded-full  leading-tight hover:bg-green-500">Edit</a>
               <a href="{{route('job.detail.admin', $order)}}" class=" bg-teal-600   text-gray-100 py-1 px-4 pr-8 rounded-full leading-tight hover:bg-blue-400">Detail</a>
+            </td>
+            <td class="px-4 py-3">
+              <p class="text-sm">
+                {{$order->site}}
+              </p>
             </td>
             <td class="px-4 py-3">
               @if ($order->status == 3)
@@ -66,11 +72,7 @@
                 {{$order->pelanggan->nama}}
               </p>
             </td>
-            <td class="px-4 py-3">
-              <p class="text-sm">
-                {{$order->site}}
-              </p>
-            </td>
+            
             {{-- <td class="px-4 py-3 text-sm">
               <p class="text-md font-semibold ">Paket : {{$order->harga_paket}}</p>
               <p class="text-md font-semibold ">All : {{$order->harga_all}}</p>
