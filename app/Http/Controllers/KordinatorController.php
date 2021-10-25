@@ -102,7 +102,7 @@ class KordinatorController extends Controller
     {
         return view('pages-kordinator.kordinator-delegasi-detail', [
             'orders' => Order::where('status', 4)
-                ->where('pelanggan_id', $joborder->id)
+                ->where('pelanggan_id', $joborder->pelanggan_id)
                 ->orderBy('id', 'asc')->paginate(100),
             'kordinators' => Kordinator::get()->all(),
             'teknisis' => Teknisi::get()->all()

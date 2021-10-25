@@ -9,7 +9,7 @@ Route::middleware('auth')->group(function () {
     Route::get('/map-site', [PagesController::class, 'DashboardMapSite'])->name('map.site');
     // Route::get('job-progres', [JobController::class, 'progres'])->name('job.progres');
     // Route::get('job-detail', [JobController::class, 'detail'])->name('job.detail');
-    // Route::get('{order:id}/jobreport-detail/', [TeknisiController::class, 'detailJobreport'])->name('jobreport.detail');
+    Route::get('/jobreport-detail/{order:id}', [TeknisiController::class, 'detailJobreport'])->name('jobreport.detail');
     Route::get('/foto-report/{job_photo:id}', [ClientOrderController::class, 'fotoReport'])->name('report.foto');
 
     Route::get('master-bast/{order:id}', [FileController::class, 'bastMaster'])->name('job.bast');
@@ -25,6 +25,7 @@ Route::middleware('auth')->group(function () {
 
     Route::get('/jobreport', [ClientOrderController::class, 'jobreport'])->name('client.jobreport');
     Route::get('{order:id}/job-detail/admin', [JobController::class, 'detail'])->name('job.detail.client');
+    Route::get('{order:id}/jobreport-detail', [ClientOrderController::class, 'detailJobreport'])->name('client.jobreport.detail');
 });
 
 // Hak akses untuk admin
@@ -39,7 +40,7 @@ Route::middleware(['auth', 'accessAdmin'])->group(function () {
     // Route::get('{order:id}/job-detail', [JobController::class, 'detail'])->name('job.detail.client');
 
 
-    Route::get('{order:id}/jobreport-detail', [ClientOrderController::class, 'detailJobreport'])->name('client.jobreport.detail');
+
     Route::post('/jobreport-reject', [ClientOrderController::class, 'rejectJobreport'])->name('client.jobreport.reject');
     Route::post('/jobreport-approve', [ClientOrderController::class, 'approveJobreport'])->name('client.jobreport.approve');
     Route::post('/approve/{order:id}', [ClientOrderController::class, 'approve'])->name('job.approve');

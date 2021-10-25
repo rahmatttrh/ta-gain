@@ -10,7 +10,7 @@ class JobActivityController extends Controller
     public function activity(Order $order)
     {
         request()->validate([
-            'activity' => 'required|alpha',
+            'activity' => 'required',
             'jam' => 'required',
             'tanggal' => 'required',
         ]);
