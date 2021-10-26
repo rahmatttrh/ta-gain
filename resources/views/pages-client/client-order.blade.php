@@ -9,7 +9,7 @@
   <!-- Table -->
   <div class="w-full   overflow-hidden rounded shadow-xs">
     <div id="main" class="w-full overflow-x-auto">
-      <table class="w-full whitespace-no-wrap ">
+      <table class="w-full whitespace-no-wrap basic-datatables ">
         <thead>
           <tr class="text-xs font-semibold tracking-wide text-left bg-gray-50 dark:bg-gray-900  text-gray-500 dark:text-gray-400 uppercase border-b dark:border-gray-700  ">
             <th class="px-4 py-3">No</th>
