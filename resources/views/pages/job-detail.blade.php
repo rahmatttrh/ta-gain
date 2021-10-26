@@ -108,21 +108,6 @@
         </tbody>
       </table>
     </div>
-
-    {{-- @if($order->status < '7' ) <!-- -->
-      @if (auth()->user()->isAdmin())
-      <a href="{{route('job.reimburse.admin', $order)}}" class="flex items-center justify-center w-25 px-3 py-3 text-sm font-medium leading-5 text-white transition-all duration-300 bg-gradient-to-b from-yellow-400 to-yellow-500 hover:from-yellow-300 hover:to-yellow-500 rounded active:bg-teal-600 hover:bg-teal-800 focus:outline-none focus:shadow-outline-teal">
-        Validasi Reimburse
-      </a>
-      @endif
-      <!-- Kordinator -->
-      @if (auth()->user()->isKordinator())
-      <a href="{{route('job.reimburse.kordinator', $order)}}" class="flex items-center justify-center w-28 px-3 py-3 text-sm font-medium leading-5 text-white transition-all duration-300 bg-gradient-to-b from-yellow-400 to-yellow-500 hover:from-yellow-300 hover:to-yellow-500 rounded active:bg-teal-600 hover:bg-teal-800 focus:outline-none focus:shadow-outline-teal">
-        Reimbursement
-      </a>
-      @endif
-      <!--  -->
-      @endif --}}
       <hr>
       @if ($order->status == '6' || $order->status == '7' || $order->status == '8' || $order->status == '9')
       <div class="flex items-center justify-between p-4 mb-2 mt-4   text-gray-50 bg-green-400 rounded  ">
@@ -184,9 +169,27 @@
           </button>
         </div>
       </form>
-      @error('activity') <span class="flex items-center justify-between p-4 mb-4 text-sm  text-purple-100 bg-red-500 rounded-lg shadow-md focus:outline-none focus:shadow-outline-purple">{{ $message }}</span> @enderror
+      @error('activity')
+        <div class="flex flex-col  mb-2 bg-red-500 p-2 rounded">
+             <span class="text-sm w-full text-gray-100">{{ $message }}</span> 
+            {{-- @error('item_id') <span class="text-sm w-full text-red-500">Harga belum di isi</span> @enderror --}}
+        </div>
+        @enderror
+        @error('jam')
+        <div class="flex flex-col  mb-2 bg-red-500 p-2 rounded">
+             <span class="text-sm w-full text-gray-100">{{ $message }}</span> 
+            {{-- @error('item_id') <span class="text-sm w-full text-red-500">Harga belum di isi</span> @enderror --}}
+        </div>
+        @enderror
+        @error('tanggal')
+        <div class="flex flex-col  mb-2 bg-red-500 p-2 rounded">
+             <span class="text-sm w-full text-gray-100">{{ $message }}</span> 
+            {{-- @error('item_id') <span class="text-sm w-full text-red-500">Harga belum di isi</span> @enderror --}}
+        </div>
+        @enderror
+      {{-- @error('activity') <span class="flex items-center justify-between p-4 mb text-sm  text-purple-100 bg-red-500 rounded-lg shadow-md focus:outline-none focus:shadow-outline-purple">{{ $message }}</span> @enderror
       @error('jam') <span class="flex items-center justify-between p-4 mb-4 text-sm  text-purple-100 bg-red-500 rounded-lg shadow-md focus:outline-none focus:shadow-outline-purple">{{ $message }}</span> @enderror
-      @error('tanggal') <span class="flex items-center justify-between p-4 mb-4 text-sm  text-purple-100 bg-red-500 rounded-lg shadow-md focus:outline-none focus:shadow-outline-purple">{{ $message }}</span> @enderror
+      @error('tanggal') <span class="flex items-center justify-between p-4 mb-4 text-sm  text-purple-100 bg-red-500 rounded-lg shadow-md focus:outline-none focus:shadow-outline-purple">{{ $message }}</span> @enderror --}}
       
       @endif
 

@@ -26,6 +26,14 @@
             </div>
         </div>
 
+        
+        @error('id_item')
+        <div class="flex flex-col  mb-2 bg-red-500 p-2 rounded">
+             <span class="text-sm w-full text-gray-100">Site Order belum dipilih !</span> 
+            {{-- @error('item_id') <span class="text-sm w-full text-red-500">Harga belum di isi</span> @enderror --}}
+        </div>
+        @enderror
+
 
         <div class="w-full overflow-hidden rounded-lg shadow-xs mb-5">
             <div id="main" class="w-full overflow-x-auto">
@@ -33,40 +41,40 @@
                 <table class="w-full whitespace-no-wrap basic-datatables">
                     <thead>
                         <tr class="text-xs font-semibold tracking-wide text-left text-gray-500 uppercase border-b dark:border-gray-700 bg-gray-50 dark:text-gray-400 dark:bg-gray-800">
-                            <th class="px-4 py-3">
+                            <th class="px-4 py-2">
                                 <input type="checkbox" name="" id="selectall">
                             </th>
-                            <th class="px-4 py-3">No</th>
-                            <th class="px-4 py-3">Client</th>
-                            <th class="px-4 py-3">Site</th>
-                            <th class="px-4 py-3">Alamat</th>
-                            <th class="px-4 py-3">Lat - Long</th>
-                            <th class="px-4 py-3">Nama Projek</th>
-                            <th class="px-4 py-3">Ukuran</th>
-                            <th class="px-4 py-3">Sistem Antena</th>
-                            <th class="px-4 py-3">Jenis Pekerjaan</th>
-                            <th class="px-4 py-3">Harga</th>
-                            <th class="px-4 py-3">Modem</th>
+                            <th class="px-4 py-2">No</th>
+                            <th class="px-4 py-2">Client</th>
+                            <th class="px-4 py-2">Site</th>
+                            <th class="px-4 py-2">Alamat</th>
+                            <th class="px-4 py-2">Lat - Long</th>
+                            <th class="px-4 py-2">Nama Projek</th>
+                            <th class="px-4 py-2">Ukuran</th>
+                            <th class="px-4 py-2">Sistem Antena</th>
+                            <th class="px-4 py-2">Jenis Pekerjaan</th>
+                            <th class="px-4 py-2">Harga</th>
+                            <th class="px-4 py-2">Modem</th>
                         </tr>
                     </thead>
                     <tbody class="bg-white divide-y dark:divide-gray-700 dark:bg-gray-800">
                         @foreach ($orders as $key => $order)
                         <tr class="text-gray-500 dark:text-gray-400 ">
-                            <td class="px-4 py-3">
+                            <td class="px-4 py-1">
                                 <input type="checkbox" class="case" name="id_item[]" value="{{$order->id}}" />
                             </td>
-                            <td class="px-4 py-3">
+                            <td class="px-4 py-1">
                                 {{ ($orders->currentpage()-1) * $orders->perpage() + $key + 1 }}
                             </td>
-                            <td class="px-4 py-3">
+                            <td class="px-4 py-1">
                                 <p class="text-sm ">
                                     {{$order->pelanggan->nama}}
                                 </p>
                             </td>
-                            <td class="px-4 py-3 text-sm">
+                            <td class="px-4 py-1 text-sm">
                                 {{$order->site}}
                             </td>
-                            <td class="px-4 py-3">
+                            <td class="px-4 py-1">
                                 <p class="text-sm ">
                                     {{$order->kabupaten}},{{$order->provinsi}}
                                 </p>
@@ -74,10 +82,10 @@
                                     {{$order->alamat}}
                                 </p>
                             </td>
-                            <td class="px-4 py-3 text-sm">
+                            <td class="px-4 py-1 text-sm">
                                 <p>{{$order->latitude}}, {{$order->longitude}}</p>
                             </td>
-                            <td class="px-4 py-3">
+                            <td class="px-4 py-1">
                                 <p class="text-sm">
                                     {{$order->nama_projek}}
                                 </p>
@@ -85,21 +93,21 @@
                                     {{$order->no_telpon}}
                                 </p>
                             </td>
-                            <td class="px-4 py-3">
+                            <td class="px-4 py-1">
                                 <p class="text-sm">{{$order->ukuran}}</p>
                             </td>
-                            <td class="px-4 py-3">
+                            <td class="px-4 py-1">
                                 <p class="text-sm">{{$order->system_antena}}</p>
                             </td>
-                            <td class="px-4 py-3">
+                            <td class="px-4 py-1">
                                 <p class="text-sm">{{$order->jenis_pekerjaan}}</p>
                             </td>
-                            <td class="px-4 py-3">
+                            <td class="px-4 py-1">
                                 <p>Paket : {{formatRupiah($order->harga_paket)}}</p>
                                 <p>Reimburse : {{formatRupiah($order->harga_all)}}</p>
                                 <p>Grand Total : {{formatRupiah($order->grand_total)}}</p>
                             </td>
-                            <td class="px-4 py-3">
+                            <td class="px-4 py-1">
                                 <p class="text-sm">{{$order->modem}}</p>
                             </td>
                         </tr>

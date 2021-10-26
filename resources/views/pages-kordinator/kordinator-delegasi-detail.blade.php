@@ -13,7 +13,7 @@
             <div class="w-1/2 mr-2">
                 {{-- <label for="" class="block uppercase tracking-wide dark:text-gray-300 text-gray-700 text-xs font-bold mb-2">Teknisi</label> --}}
 
-                <select name="teknisis[]" multiple="multiple" class="js-example-basic-multiple w-full mr-2 bg-gray-200 border border-gray-200 text-gray-700  px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-state" required>
+                <select name="teknisis[]" multiple="multiple" class="js-example-basic-multiple w-full mr-2 bg-gray-200 border border-gray-200 text-gray-700  px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-state" >
                     @foreach ($teknisis as $teknisi)
                     <option value="{{$teknisi->id}}">{{$teknisi->nama}}</option>
                     @endforeach
@@ -25,6 +25,19 @@
                 <button type="submit" name="submit" onclick="konfirmasi()" class="w-full mr-2 px-4 py-2 text-sm font-medium leading-5 text-white transition-all duration-300 bg-blue-400 hover:from-blue-300 hover:to-blue-500 rounded active:bg-teal-600 hover:bg-teal-800 focus:outline-none focus:shadow-outline-teal">Delegasi</button>
             </div>
         </div>
+
+        @error('teknisis')
+        <div class="flex flex-col  mb-2 bg-red-500 p-2 rounded">
+             <span class="text-sm w-full text-gray-100">Teknisi belum dipilih !</span> 
+            {{-- @error('item_id') <span class="text-sm w-full text-red-500">Harga belum di isi</span> @enderror --}}
+        </div>
+        @enderror
+        @error('id_item')
+        <div class="flex flex-col  mb-2 bg-red-500 p-2 rounded">
+             <span class="text-sm w-full text-gray-100">Site Order belum dipilih !</span> 
+            {{-- @error('item_id') <span class="text-sm w-full text-red-500">Harga belum di isi</span> @enderror --}}
+        </div>
+        @enderror
 
         <div class="w-full overflow-hidden rounded-lg shadow-xs mb-5">
             <div class="w-full overflow-x-auto">

@@ -121,6 +121,10 @@ class JobController extends Controller
     // Memasukan job order ke halaman job order dari halaman draft (Merubah status ke 2)
     public function publish(Request $request)
     {
+        $request->validate([
+            'pelanggan_id' => 'required',
+            'id_item' => 'required'
+        ]);
         $arrayItem = $request->id_item;
         $jumlah = count($arrayItem);
         $jobOrder = $this->getJo();

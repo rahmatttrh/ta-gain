@@ -4,7 +4,7 @@
   @endsection
   <x-header><span class="font-bold">LIST</span> JOB PROGRESS</x-header>
 
-  <x-menu-job></x-menu-job>
+  {{-- <x-menu-job></x-menu-job> --}}
 
 
   <div class="w-full overflow-hidden rounded-lg shadow-xs mb-5">
