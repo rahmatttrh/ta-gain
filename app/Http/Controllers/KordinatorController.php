@@ -108,9 +108,16 @@ class KordinatorController extends Controller
             'teknisis' => Teknisi::get()->all()
         ]);
     }
-    // Hand Over 
+
+
+    // DELEGASI KE TEKNISI
     public function handOver(Request $request)
     {
+        $request->validate([
+            'teknisis' => 'required',
+            'id_item' => 'required'
+        ]);
+
         $arrayItem = $request->id_item;
         $jumlah = count($arrayItem);
         $teknisis = $request->teknisis;
