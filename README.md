@@ -16,14 +16,13 @@
     - ⚡ Rahmat Hidayat</br>
     - ⚡ NIM 171011400893</br>
     - ⚡ Prodi Teknik Informatika</br>
-    - ⚡ Fakultas Teknik</br>
-    - ⚡ Universitas Pamulang</br>
+    - ⚡ Fakultas Teknik Universitas Pamulang</br><br>
 
  <summary><strong>Installation</strong></summary>
     - ⚡ clone/fork Repo ini</br>
     - ⚡ composer install</br>
     - ⚡ rename file .env.example menjadi .env</br>
-    - ⚡ buat database</br>
+    - ⚡ create database dengan nama sesuai dengan DB_DATABASE di file .env</br>
     - ⚡ jalankan php artisan migrate --seed</br>
     - ⚡ done !</br><br>
 
@@ -36,4 +35,6 @@
 
 ### Let's code!
 
-### IG : @RAHMATTTRH.
+### IG : @rahmatttrh.
+
+### email : rahmattrust@gmail.com.
