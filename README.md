@@ -18,6 +18,9 @@
     - ⚡ Prodi Teknik Informatika</br>
     - ⚡ Fakultas Teknik Universitas Pamulang</br><br>
 
+<summary><strong>Dosen Pembimbing</strong></summary>
+    - ⚡ Fitri Yanti, S.Kom., M.Kom.</br>
+
  <summary><strong>Installation</strong></summary>
     - ⚡ clone/fork Repo ini</br>
     - ⚡ composer install</br>
