@@ -58,7 +58,7 @@
                 <td class="px-4 py-3 text-sm">
                 {{-- <p class="font-semibold">Mandiri</p> --}}
                       <p class="text-xs text-gray-600 dark:text-gray-400">
-                        {{$tek->no_rek}}+ {{$tek->id}}
+                        {{$tek->no_rek}}
                       </p>
                 </td>
                 <td class="px-2 py-3 text-xs flex">
