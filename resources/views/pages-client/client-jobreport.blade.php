@@ -92,9 +92,9 @@
       })
       .then((willDelete) => {
         if (willDelete) {
-          swal("Berhasil! Pekerjaan telah selesai!", {
-            icon: "success",
-          });
+        //   swal("Berhasil! Pekerjaan telah selesai!", {
+        //     icon: "success",
+        //   });
           const id = $(this).data('id');
           $('#id').val(id);
           $(`#approve`).submit();

@@ -115,6 +115,7 @@ class ClientOrderController extends Controller
 
     public function approve(Order $order)
     {
+
         $order->update([
             'status' => '7',
         ]);
@@ -125,12 +126,15 @@ class ClientOrderController extends Controller
     public function approveBast(Order $order)
     {
 
-
-        $order->where('id', request('id'))->update([
-            'status' => '9',
-        ]);
-
-        return redirect('/client-complete')->with('success', 'Job Order berhasil di Approve!');
+        // dd('tes');
+        if (!$order->bast) {
+            return redirect()->back()->with('warning', 'BAST belum tersedia');
+        } else {
+            $order->where('id', request('id'))->update([
+                'status' => '9',
+            ]);
+            return redirect('/client-complete')->with('success', 'Job Order berhasil di Approve!');
+        }
     }
 
     public function profile()
