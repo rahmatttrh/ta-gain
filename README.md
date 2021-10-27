@@ -19,7 +19,7 @@
     - ⚡ Fakultas Teknik Universitas Pamulang</br><br>
 
 <summary><strong>Dosen Pembimbing</strong></summary>
-    - ⚡ Fitri Yanti, S.Kom., M.Kom.</br>
+    - ⚡ Fitri Yanti, S.Kom., M.Kom.</br></br>
 
  <summary><strong>Installation</strong></summary>
     - ⚡ clone/fork Repo ini</br>
