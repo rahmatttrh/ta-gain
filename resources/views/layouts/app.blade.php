@@ -236,7 +236,7 @@
   @if (session('warning'))
   <script>
     $(document).ready(function() {
-      swal("GAGAL!", "{!! Session::get('warning') !!}", "warning");
+      swal("Fail!", "{!! Session::get('warning') !!}", "warning");
     })
   </script>
   @endif

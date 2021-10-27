@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\{Pelanggan, User};
+use App\Models\{Joborder, Pelanggan, User};
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 
@@ -106,10 +106,15 @@ class PelangganController extends Controller
     }
     public function delete(Pelanggan $pelanggan)
     {
-
-        $user = User::where('email', $pelanggan->email);
-        $user->delete();
-        $pelanggan->delete();
-        return redirect()->back()->with('berhasil', 'Data berhasil dihapus.');
+        $jobOrder = Joborder::where('pelanggan_id', $pelanggan->id)->first();
+        // dd($jobOrder);
+        if ($jobOrder) {
+            return redirect()->back()->with('warning', 'Client memiliki Job Order, gagal menghapus.');
+        } else {
+            $user = User::where('email', $pelanggan->email);
+            $user->delete();
+            $pelanggan->delete();
+            return redirect()->back()->with('berhasil', 'Data berhasil dihapus.');
+        }
     }
 }

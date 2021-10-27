@@ -159,7 +159,7 @@ class KordinatorController extends Controller
     {
         // Validasi
         request()->validate([
-            'namaKordinator' => 'required|alpha|min:2',
+            'namaKordinator' => 'required|min:2',
             'noKordinator' => 'required|numeric',
             'email' => 'required',
             'area' => 'required',
@@ -255,12 +255,17 @@ class KordinatorController extends Controller
     public function delete(Kordinator $kordinator)
     {
         // dd($kordinator->id);
-        $user = User::where('email', $kordinator->email);
-        $user->delete();
-        Storage::delete($kordinator->foto_ktp);
-        Storage::delete($kordinator->foto_diri);
-        $kordinator->delete();
-        return redirect()->back()->with('berhasil', 'Data berhasil dihapus.');
+        $order = Order::where('kordinator_id', $kordinator->id)->first();
+        if ($order) {
+            return redirect()->back()->with('warning', 'Kordinator memiliki Job Order, gagal menghapus.');
+        } else {
+            $user = User::where('email', $kordinator->email);
+            $user->delete();
+            Storage::delete($kordinator->foto_ktp);
+            Storage::delete($kordinator->foto_diri);
+            $kordinator->delete();
+            return redirect()->back()->with('berhasil', 'Data berhasil dihapus.');
+        }
     }
     // KORDINATOR
     // Menampilkan job order yg dimiliki

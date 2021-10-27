@@ -31,7 +31,7 @@ class TeknisiController extends Controller
     public function store()
     {
         request()->validate([
-            'namaTeknisi' => 'required|alpha|min:2',
+            'namaTeknisi' => 'required|min:2',
             'noTeknisi' => 'required|numeric|min:5',
             'email' => 'required',
             'area' => 'required',
@@ -122,12 +122,18 @@ class TeknisiController extends Controller
     public function delete(Teknisi $teknisi)
     {
         // dd($teknisi->id);
-        $user = User::where('email', $teknisi->email);
-        $user->delete();
-        Storage::delete($teknisi->foto_ktp);
-        Storage::delete($teknisi->foto_diri);
-        $teknisi->delete();
-        return redirect()->back()->with('berhasil', 'Data berhasil dihapus.');
+
+        $order = DB::table('order_teknisi')->where('teknisi_id', $teknisi->id)->first();
+        if ($order) {
+            return redirect()->back()->with('warning', 'Teknisi memiliki Job Order, gagal menghapus.');
+        } else {
+            $user = User::where('email', $teknisi->email);
+            $user->delete();
+            Storage::delete($teknisi->foto_ktp);
+            Storage::delete($teknisi->foto_diri);
+            $teknisi->delete();
+            return redirect()->back()->with('berhasil', 'Data berhasil dihapus.');
+        }
     }
 
     public function order()
