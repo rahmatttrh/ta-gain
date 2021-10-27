@@ -75,8 +75,8 @@
                             {{ ($jobphotos->currentpage()-1) * $jobphotos->perpage() + $key + 1 }}
                         </td>
                         <td class="px-4 py-3 text-sm">
-                            <a href="{{ route('report.foto', $job) }}"><img  width="75px" style="cursor: pointer;" class="rounded" src="{{asset('storage/' .$job->foto_pekerjaan)}}" alt=""></a>
-                            {{-- <a href="{{ route('report.foto', $job) }}"><img  width="75px" style="cursor: pointer;" class="rounded" src="{{asset('storage/app/' .$job->foto_pekerjaan)}}" alt=""></a> --}}
+                            {{-- <a href="{{ route('report.foto', $job) }}"><img  width="75px" style="cursor: pointer;" class="rounded" src="{{asset('storage/' .$job->foto_pekerjaan)}}" alt=""></a> --}}
+                            <a href="{{ route('report.foto', $job) }}"><img  width="75px" style="cursor: pointer;" class="rounded" src="{{asset('storage/app/' .$job->foto_pekerjaan)}}" alt=""></a>
                         </td>
                        
                         <td class="px-4 py-3 text-sm">
